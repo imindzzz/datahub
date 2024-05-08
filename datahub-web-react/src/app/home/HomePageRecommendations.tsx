@@ -10,7 +10,7 @@ import {
 } from '../../types.generated';
 import { useListRecommendationsQuery } from '../../graphql/recommendations.generated';
 import { RecommendationModule } from '../recommendations/RecommendationModule';
-import { BrowseEntityCard } from '../search/BrowseEntityCard';
+// import { BrowseEntityCard } from '../search/BrowseEntityCard';
 import { useEntityRegistry } from '../useEntityRegistry';
 import { useGetEntityCountsQuery } from '../../graphql/app.generated';
 import { ANTD_GRAY } from '../entity/shared/constants';
@@ -175,9 +175,9 @@ export const HomePageRecommendations = ({ user }: Props) => {
                             </DomainsRecomendationContainer>
                         </>
                     )}
-                    <RecommendationTitle level={4}>Explore your data</RecommendationTitle>
-                    <ThinDivider />
-                    {hasIngestedMetadata ? (
+                    {/* <RecommendationTitle level={4}>Explore your data</RecommendationTitle>
+                    <ThinDivider /> */}
+                    {/* {hasIngestedMetadata ? (
                         <BrowseCardContainer>
                             {orderedEntityCounts.map(
                                 (entityCount) =>
@@ -198,7 +198,7 @@ export const HomePageRecommendations = ({ user }: Props) => {
                         <NoMetadataContainer>
                             <NoMetadataEmpty description="No Metadata Found 😢" />
                         </NoMetadataContainer>
-                    )}
+                    )} */}
                 </RecommendationContainer>
             )}
             {recommendationModules &&
