@@ -10,6 +10,7 @@ export const ENTITY_PROFILE_LINEAGE_ID = 'entity-profile-lineage';
 export const ENTITY_PROFILE_SCHEMA_ID = 'entity-profile-schema';
 
 // Entity profile sidebar
+export const ENTITY_PROFILE_CONFIG_ID = 'entity-profile-config';
 export const ENTITY_PROFILE_OWNERS_ID = 'entity-profile-owners';
 export const ENTITY_PROFILE_TAGS_ID = 'entity-profile-tags';
 export const ENTITY_PROFILE_GLOSSARY_TERMS_ID = 'entity-profile-glossary-terms';

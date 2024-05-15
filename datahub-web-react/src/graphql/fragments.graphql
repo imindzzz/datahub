@@ -253,6 +253,12 @@ fragment nonRecursiveDatasetFields on Dataset {
     editableProperties {
         name
         description
+        assetName
+        assetDescription
+        assetPosition
+        assetVersion
+        assetVersionDescription
+        assetRemark
     }
     ownership {
         ...ownershipFields

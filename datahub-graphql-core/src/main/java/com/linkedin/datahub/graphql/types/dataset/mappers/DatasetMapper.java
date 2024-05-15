@@ -252,6 +252,12 @@ public class DatasetMapper implements ModelMapper<EntityResponse, Dataset> {
     if (editableDatasetProperties.getName() != null) {
       editableProperties.setName(editableDatasetProperties.getName());
     }
+    editableProperties.setAssetName(editableDatasetProperties.getAssetName());
+    editableProperties.setAssetDescription(editableDatasetProperties.getAssetDescription());
+    editableProperties.setAssetPosition(editableDatasetProperties.getAssetPosition());
+    editableProperties.setAssetVersion(editableDatasetProperties.getAssetVersion());
+    editableProperties.setAssetVersionDescription(editableDatasetProperties.getAssetVersionDescription());
+    editableProperties.setAssetRemark(editableDatasetProperties.getAssetRemark());
     dataset.setEditableProperties(editableProperties);
   }
 
