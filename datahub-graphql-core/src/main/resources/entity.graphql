@@ -3382,6 +3382,36 @@ type DatasetEditableProperties {
     Description of the Dataset
     """
     description: String
+
+    """
+    资产名称
+    """
+    assetName: String
+
+    """
+    资产描述
+    """
+    assetDescription: String
+
+    """
+    资产位置
+    """
+    assetPosition: String
+
+    """
+    资产版本
+    """
+    assetVersion: String
+
+    """
+    版本说明
+    """
+    assetVersionDescription: String
+
+    """
+    备注
+    """
+    assetRemark: String
 }
 
 """
@@ -4730,6 +4760,36 @@ input DatasetEditablePropertiesUpdate {
     Writable description aka documentation for a Dataset
     """
     description: String!
+
+    """
+    资产名称
+    """
+    assetName: String!
+
+    """
+    资产描述
+    """
+    assetDescription: String!
+
+    """
+    资产位置
+    """
+    assetPosition: String!
+
+    """
+    资产版本
+    """
+    assetVersion: String!
+
+    """
+    版本说明
+    """
+    assetVersionDescription: String!
+
+    """
+    备注
+    """
+    assetRemark: String!
 }
 
 """

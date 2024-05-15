@@ -2241,6 +2241,60 @@
         "fieldName" : "editedDescription",
         "fieldType" : "TEXT"
       }
+    }, {
+      "name" : "assetName",
+      "type" : "string",
+      "doc" : "资产名称",
+      "optional" : true,
+      "Searchable" : {
+        "fieldName" : "editedAssetName",
+        "fieldType" : "TEXT"
+      }
+    }, {
+      "name" : "assetDescription",
+      "type" : "string",
+      "doc" : "资产描述",
+      "optional" : true,
+      "Searchable" : {
+        "fieldName" : "editedAssetDescription",
+        "fieldType" : "TEXT"
+      }
+    }, {
+      "name" : "assetPosition",
+      "type" : "string",
+      "doc" : "资产位置",
+      "optional" : true,
+      "Searchable" : {
+        "fieldName" : "editedAssetPosition",
+        "fieldType" : "TEXT"
+      }
+    }, {
+      "name" : "assetVersion",
+      "type" : "string",
+      "doc" : "资产版本",
+      "optional" : true,
+      "Searchable" : {
+        "fieldName" : "editedAssetVersion",
+        "fieldType" : "TEXT"
+      }
+    }, {
+      "name" : "assetVersionDescription",
+      "type" : "string",
+      "doc" : "版本说明",
+      "optional" : true,
+      "Searchable" : {
+        "fieldName" : "editedAssetVersionDescription",
+        "fieldType" : "TEXT"
+      }
+    }, {
+      "name" : "assetRemark",
+      "type" : "string",
+      "doc" : "备注",
+      "optional" : true,
+      "Searchable" : {
+        "fieldName" : "editedAssetRemark",
+        "fieldType" : "TEXT"
+      }
     } ],
     "Aspect" : {
       "name" : "editableDatasetProperties"

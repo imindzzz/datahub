@@ -61,7 +61,20 @@ export const DescriptionEditor = ({ onComplete }: DescriptionEditorProps) => {
 
     const updateDescriptionLegacy = () => {
         return updateEntity?.({
-            variables: { urn: mutationUrn, input: { editableProperties: { description: updatedDescription || '' } } },
+            variables: {
+                urn: mutationUrn,
+                input: {
+                    editableProperties: {
+                        assetName: entityData?.editableProperties?.assetName || '',
+                        assetDescription: entityData?.editableProperties?.assetDescription || '',
+                        assetPosition: entityData?.editableProperties?.assetPosition || '',
+                        assetVersion: entityData?.editableProperties?.assetVersion || '',
+                        assetVersionDescription: entityData?.editableProperties?.assetVersionDescription || '',
+                        assetRemark: entityData?.editableProperties?.assetRemark || '',
+                        description: updatedDescription || '',
+                    },
+                },
+            },
         });
     };
 

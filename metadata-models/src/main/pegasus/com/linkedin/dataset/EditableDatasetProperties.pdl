@@ -19,4 +19,58 @@ record EditableDatasetProperties includes ChangeAuditStamps {
     "fieldName": "editedDescription",
   }
   description: optional string
+
+  /**
+   * 资产名称
+   */
+  @Searchable = {
+    "fieldType": "TEXT",
+    "fieldName": "editedAssetName",
+  }
+  assetName: optional string
+
+  /**
+   * 资产描述
+   */
+  @Searchable = {
+    "fieldType": "TEXT",
+    "fieldName": "editedAssetDescription",
+  }
+  assetDescription: optional string
+
+  /**
+   * 资产位置
+   */
+  @Searchable = {
+    "fieldType": "TEXT",
+    "fieldName": "editedAssetPosition",
+  }
+  assetPosition: optional string
+
+  /**
+   * 资产版本
+   */
+  @Searchable = {
+    "fieldType": "TEXT",
+    "fieldName": "editedAssetVersion",
+  }
+  assetVersion: optional string
+
+  /**
+   * 版本说明
+   */
+  @Searchable = {
+    "fieldType": "TEXT",
+    "fieldName": "editedAssetVersionDescription",
+  }
+  assetVersionDescription: optional string
+
+  /**
+   * 备注
+   */
+  @Searchable = {
+    "fieldType": "TEXT",
+    "fieldName": "editedAssetRemark",
+  }
+  assetRemark: optional string
 }
