@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { message, Modal, Button, Form, Input } from 'antd';
-import { EditOutlined } from '@ant-design/icons';
+import { message, Modal, Button, Form, Input, Space } from 'antd';
+import { EditOutlined, DeleteOutlined, PlusOutlined } from '@ant-design/icons';
 import { useEntityData, useEntityUpdate, useMutationUrn } from '../../EntityContext';
 import analytics, { EventType, EntityActionType } from '../../../../analytics';
 import { useUserContext } from '../../../../context/useUserContext';
@@ -19,25 +19,50 @@ export const AddConfigModal = ({ buttonProps, refetch }: AddLinkProps) => {
     const { entityType } = useEntityData();
     const { entityData } = useEntityData();
 
+    const hasConfig = !!entityData?.editableProperties?.assetName;
+
     const updateEntity = useEntityUpdate<GenericEntityUpdate>();
 
     const [form] = Form.useForm();
-    useEffect(() => {
+
+    const showModal = () => {
         if (entityData?.editableProperties) {
             form.setFieldsValue({
                 assetName: entityData?.editableProperties?.assetName || '',
-                        assetDescription: entityData?.editableProperties?.assetDescription || '',
-                        assetPosition: entityData?.editableProperties?.assetPosition || '',
-                        assetVersion: entityData?.editableProperties?.assetVersion || '',
-                        assetVersionDescription: entityData?.editableProperties?.assetVersionDescription || '',
-                        assetRemark: entityData?.editableProperties?.assetRemark || '',
-                        
+                assetDescription: entityData?.editableProperties?.assetDescription || '',
+                assetPosition: entityData?.editableProperties?.assetPosition || '',
+                assetVersion: entityData?.editableProperties?.assetVersion || '',
+                assetVersionDescription: entityData?.editableProperties?.assetVersionDescription || '',
+                assetRemark: entityData?.editableProperties?.assetRemark || '',
             });
         }
-    }, [form, entityData?.editableProperties]);
-
-    const showModal = () => {
         setIsModalVisible(true);
+    };
+    const handleRemove = () => {
+        Modal.confirm({
+            title: `Do you want to remove config?`,
+            content: `Are you sure you want to remove the config?`,
+            onOk: async () => {
+                console.log('handleRemove');
+                await updateEntity?.({
+                    variables: {
+                        urn: mutationUrn,
+                        input: {
+                            editableProperties: {
+                                description: entityData?.editableProperties?.description || '',
+                                assetName: '',
+                                assetDescription: '',
+                                assetPosition: '',
+                                assetVersion: '',
+                                assetVersionDescription: '',
+                                assetRemark: '',
+                            },
+                        },
+                    },
+                });
+                message.success({ content: 'Success', duration: 2 });
+            },
+        });
     };
 
     const handleClose = () => {
@@ -86,9 +111,31 @@ export const AddConfigModal = ({ buttonProps, refetch }: AddLinkProps) => {
 
     return (
         <>
-            <Button data-testid="add-link-button" icon={<EditOutlined />} onClick={showModal} {...buttonProps}>
-                Config
-            </Button>
+            {hasConfig ? (
+                <Space>
+                    <Button
+                        data-testid="edit-config-button"
+                        icon={<EditOutlined />}
+                        onClick={showModal}
+                        {...buttonProps}
+                    >
+                        Edit Config
+                    </Button>
+                    <Button
+                        data-testid="remove-config-button"
+                        icon={<DeleteOutlined />}
+                        onClick={handleRemove}
+                        {...buttonProps}
+                    >
+                        Remove Config
+                    </Button>
+                </Space>
+            ) : (
+                <Button data-testid="add-config-button" icon={<PlusOutlined />} onClick={showModal} {...buttonProps}>
+                    Add Config
+                </Button>
+            )}
+
             <Modal
                 title="Config"
                 visible={isModalVisible}
@@ -136,7 +183,6 @@ export const AddConfigModal = ({ buttonProps, refetch }: AddLinkProps) => {
                         data-testid="add-config-modal-assetPosition"
                         name="assetPosition"
                         label="Asset Position"
-                       
                         rules={[
                             {
                                 required: true,
@@ -150,7 +196,6 @@ export const AddConfigModal = ({ buttonProps, refetch }: AddLinkProps) => {
                         data-testid="add-config-modal-assetVersion"
                         name="assetVersion"
                         label="Asset Version"
-                     
                         rules={[
                             {
                                 required: true,
@@ -164,7 +209,6 @@ export const AddConfigModal = ({ buttonProps, refetch }: AddLinkProps) => {
                         data-testid="add-config-modal-assetVersionDescription"
                         name="assetVersionDescription"
                         label="Asset Version Description"
-                     
                         rules={[
                             {
                                 required: true,
@@ -178,7 +222,6 @@ export const AddConfigModal = ({ buttonProps, refetch }: AddLinkProps) => {
                         data-testid="add-config-modal-assetRemark"
                         name="assetRemark"
                         label="Asset Remark"
-                    
                         rules={[
                             {
                                 required: true,
