@@ -7,22 +7,22 @@ import { Preview } from './preview/Preview';
 import { EntityProfile } from '../shared/containers/profile/EntityProfile';
 import { GetDatasetQuery, useGetDatasetQuery, useUpdateDatasetMutation } from '../../../graphql/dataset.generated';
 import { GenericEntityProperties } from '../shared/types';
-import { PropertiesTab } from '../shared/tabs/Properties/PropertiesTab';
+// import { PropertiesTab } from '../shared/tabs/Properties/PropertiesTab';
 import { DocumentationTab } from '../shared/tabs/Documentation/DocumentationTab';
 import { SchemaTab } from '../shared/tabs/Dataset/Schema/SchemaTab';
-import QueriesTab from '../shared/tabs/Dataset/Queries/QueriesTab';
+// import QueriesTab from '../shared/tabs/Dataset/Queries/QueriesTab';
 import { SidebarAboutSection } from '../shared/containers/profile/sidebar/AboutSection/SidebarAboutSection';
 import { SidebarConfigSection } from '../shared/containers/profile/sidebar/Config/SidebarConfigSection';
 import { SidebarOwnerSection } from '../shared/containers/profile/sidebar/Ownership/sidebar/SidebarOwnerSection';
 import { SidebarTagsSection } from '../shared/containers/profile/sidebar/SidebarTagsSection';
-import StatsTab from '../shared/tabs/Dataset/Stats/StatsTab';
-import { LineageTab } from '../shared/tabs/Lineage/LineageTab';
+// import StatsTab from '../shared/tabs/Dataset/Stats/StatsTab';
+// import { LineageTab } from '../shared/tabs/Lineage/LineageTab';
 import { capitalizeFirstLetterOnly } from '../../shared/textUtil';
 import ViewDefinitionTab from '../shared/tabs/Dataset/View/ViewDefinitionTab';
 import { SidebarViewDefinitionSection } from '../shared/containers/profile/sidebar/Dataset/View/SidebarViewDefinitionSection';
 import { getDataForEntityType } from '../shared/containers/profile/utils';
 import { SidebarDomainSection } from '../shared/containers/profile/sidebar/Domain/SidebarDomainSection';
-import { ValidationsTab } from '../shared/tabs/Dataset/Validations/ValidationsTab';
+// import { ValidationsTab } from '../shared/tabs/Dataset/Validations/ValidationsTab';
 import { OperationsTab } from './profile/OperationsTab';
 import { EntityMenuItems } from '../shared/EntityDropdown/EntityDropdown';
 import { SidebarSiblingsSection } from '../shared/containers/profile/sidebar/SidebarSiblingsSection';
@@ -140,43 +140,43 @@ export class DatasetEntity implements Entity<Dataset> {
                         enabled: (_, dataset: GetDatasetQuery) => !!dataset?.dataset?.embed?.renderUrl,
                     },
                 },
-                {
-                    name: 'Lineage',
-                    component: LineageTab,
-                },
-                {
-                    name: 'Properties',
-                    component: PropertiesTab,
-                },
-                {
-                    name: 'Queries',
-                    component: QueriesTab,
-                    display: {
-                        visible: (_, _1) => true,
-                        enabled: (_, _2) => true,
-                    },
-                },
-                {
-                    name: 'Stats',
-                    component: StatsTab,
-                    display: {
-                        visible: (_, _1) => true,
-                        enabled: (_, dataset: GetDatasetQuery) =>
-                            (dataset?.dataset?.datasetProfiles?.length || 0) > 0 ||
-                            (dataset?.dataset?.usageStats?.buckets?.length || 0) > 0 ||
-                            (dataset?.dataset?.operations?.length || 0) > 0,
-                    },
-                },
-                {
-                    name: 'Quality',
-                    component: ValidationsTab,
-                    display: {
-                        visible: (_, _1) => true,
-                        enabled: (_, dataset: GetDatasetQuery) => {
-                            return (dataset?.dataset?.assertions?.total || 0) > 0;
-                        },
-                    },
-                },
+                // {
+                //     name: 'Lineage',
+                //     component: LineageTab,
+                // },
+                // {
+                //     name: 'Properties',
+                //     component: PropertiesTab,
+                // },
+                // {
+                //     name: 'Queries',
+                //     component: QueriesTab,
+                //     display: {
+                //         visible: (_, _1) => true,
+                //         enabled: (_, _2) => true,
+                //     },
+                // },
+                // {
+                //     name: 'Stats',
+                //     component: StatsTab,
+                //     display: {
+                //         visible: (_, _1) => true,
+                //         enabled: (_, dataset: GetDatasetQuery) =>
+                //             (dataset?.dataset?.datasetProfiles?.length || 0) > 0 ||
+                //             (dataset?.dataset?.usageStats?.buckets?.length || 0) > 0 ||
+                //             (dataset?.dataset?.operations?.length || 0) > 0,
+                //     },
+                // },
+                // {
+                //     name: 'Quality',
+                //     component: ValidationsTab,
+                //     display: {
+                //         visible: (_, _1) => true,
+                //         enabled: (_, dataset: GetDatasetQuery) => {
+                //             return (dataset?.dataset?.assertions?.total || 0) > 0;
+                //         },
+                //     },
+                // },
                 {
                     name: 'Governance',
                     component: GovernanceTab,
