@@ -10,7 +10,7 @@ import {
 } from '../../types.generated';
 import { useListRecommendationsQuery } from '../../graphql/recommendations.generated';
 import { RecommendationModule } from '../recommendations/RecommendationModule';
-// import { BrowseEntityCard } from '../search/BrowseEntityCard';
+import { BrowseEntityCard } from '../search/BrowseEntityCard';
 import { useEntityRegistry } from '../useEntityRegistry';
 import { useGetEntityCountsQuery } from '../../graphql/app.generated';
 import { ANTD_GRAY } from '../entity/shared/constants';
@@ -101,6 +101,7 @@ const simpleViewEntityTypes = [
 ];
 
 export const HomePageRecommendations = ({ user }: Props) => {
+    const me = useUserContext();
     // Entity Types
     const entityRegistry = useEntityRegistry();
     const browseEntityList = entityRegistry.getBrowseEntityTypes();
@@ -112,6 +113,8 @@ export const HomePageRecommendations = ({ user }: Props) => {
     const businessAttributesFlag = useBusinessAttributesFlag();
 
     const showSimplifiedHomepage = user?.settings?.appearance?.showSimplifiedHomepage;
+    const showExportYourData = me.platformPrivileges?.manageIngestion;
+    const showPlatforms = me.platformPrivileges?.manageIngestion;
 
     const { data: entityCountData } = useGetEntityCountsQuery({
         variables: {
@@ -184,60 +187,68 @@ export const HomePageRecommendations = ({ user }: Props) => {
                             </DomainsRecomendationContainer>
                         </>
                     )}
-                    {/* <RecommendationTitle level={4}>Explore your data</RecommendationTitle>
-                    <ThinDivider /> */}
-                    {/* {hasIngestedMetadata ? (
-                        <BrowseCardContainer>
-                            {orderedEntityCounts.map(
-                                (entityCount) =>
-                                    entityCount &&
-                                    entityCount.count !== 0 &&
-                                    entityCount.entityType !== EntityType.BusinessAttribute && (
-                                        <BrowseEntityCard
-                                            key={entityCount.entityType}
-                                            entityType={entityCount.entityType}
-                                            count={entityCount.count}
-                                        />
-                                    ),
+                    {showExportYourData ? (
+                        <>
+                            <RecommendationTitle level={4}>Explore your data</RecommendationTitle>
+                            <ThinDivider />
+                            {hasIngestedMetadata ? (
+                                <BrowseCardContainer>
+                                    {orderedEntityCounts.map(
+                                        (entityCount) =>
+                                            entityCount &&
+                                            entityCount.count !== 0 &&
+                                            entityCount.entityType !== EntityType.BusinessAttribute && (
+                                                <BrowseEntityCard
+                                                    key={entityCount.entityType}
+                                                    entityType={entityCount.entityType}
+                                                    count={entityCount.count}
+                                                />
+                                            ),
+                                    )}
+                                    {orderedEntityCounts.map(
+                                        (entityCount) =>
+                                            entityCount &&
+                                            entityCount.count !== 0 &&
+                                            entityCount.entityType === EntityType.BusinessAttribute &&
+                                            businessAttributesFlag && (
+                                                <BrowseEntityCard
+                                                    key={entityCount.entityType}
+                                                    entityType={entityCount.entityType}
+                                                    count={entityCount.count}
+                                                />
+                                            ),
+                                    )}
+                                    {!orderedEntityCounts.some(
+                                        (entityCount) => entityCount.entityType === EntityType.GlossaryTerm,
+                                    ) && <BrowseEntityCard entityType={EntityType.GlossaryTerm} count={0} />}
+                                </BrowseCardContainer>
+                            ) : (
+                                <NoMetadataContainer>
+                                    <NoMetadataEmpty description="No Metadata Found 😢" />
+                                </NoMetadataContainer>
                             )}
-                            {orderedEntityCounts.map(
-                                (entityCount) =>
-                                    entityCount &&
-                                    entityCount.count !== 0 &&
-                                    entityCount.entityType === EntityType.BusinessAttribute &&
-                                    businessAttributesFlag && (
-                                        <BrowseEntityCard
-                                            key={entityCount.entityType}
-                                            entityType={entityCount.entityType}
-                                            count={entityCount.count}
-                                        />
-                                    ),
-                            )}
-                            {!orderedEntityCounts.some(
-                                (entityCount) => entityCount.entityType === EntityType.GlossaryTerm,
-                            ) && <BrowseEntityCard entityType={EntityType.GlossaryTerm} count={0} />}
-                        </BrowseCardContainer>
-                    ) : (
-                        <NoMetadataContainer>
-                            <NoMetadataEmpty description="No Metadata Found 😢" />
-                        </NoMetadataContainer>
-                    )} */}
+                        </>
+                    ) : undefined}
                 </RecommendationContainer>
             )}
-            {recommendationModules &&
-                recommendationModules
-                    .filter((module) => module.renderType !== RecommendationRenderType.DomainSearchList)
-                    .map((module) => (
-                        <RecommendationContainer id={getStepId(module.moduleId)} key={module.moduleId}>
-                            <RecommendationTitle level={4}>{module.title}</RecommendationTitle>
-                            <ThinDivider />
-                            <RecommendationModule
-                                module={module as RecommendationModuleType}
-                                scenarioType={scenario}
-                                showTitle={false}
-                            />
-                        </RecommendationContainer>
-                    ))}
+            {showPlatforms ? (
+                <>
+                    {recommendationModules &&
+                        recommendationModules
+                            .filter((module) => module.renderType !== RecommendationRenderType.DomainSearchList)
+                            .map((module) => (
+                                <RecommendationContainer id={getStepId(module.moduleId)} key={module.moduleId}>
+                                    <RecommendationTitle level={4}>{module.title}</RecommendationTitle>
+                                    <ThinDivider />
+                                    <RecommendationModule
+                                        module={module as RecommendationModuleType}
+                                        scenarioType={scenario}
+                                        showTitle={false}
+                                    />
+                                </RecommendationContainer>
+                            ))}
+                </>
+            ) : undefined}
         </RecommendationsContainer>
     );
 };
