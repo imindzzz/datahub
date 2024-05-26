@@ -109,16 +109,22 @@ public class DatasetUpdateInputMapper
               editableSchemaMetadata, EDITABLE_SCHEMA_METADATA_ASPECT_NAME));
     }
 
-        if (datasetUpdateInput.getEditableProperties() != null) {
+    if (datasetUpdateInput.getEditableProperties() != null) {
       final EditableDatasetProperties editableDatasetProperties = new EditableDatasetProperties();
       editableDatasetProperties.setDescription(
           datasetUpdateInput.getEditableProperties().getDescription());
-      editableDatasetProperties.setAssetName(datasetUpdateInput.getEditableProperties().getAssetName());
-      editableDatasetProperties.setAssetDescription(datasetUpdateInput.getEditableProperties().getAssetDescription());
-      editableDatasetProperties.setAssetPosition(datasetUpdateInput.getEditableProperties().getAssetPosition());
-      editableDatasetProperties.setAssetVersion(datasetUpdateInput.getEditableProperties().getAssetVersion());
-      editableDatasetProperties.setAssetVersionDescription(datasetUpdateInput.getEditableProperties().getAssetVersionDescription());
-      editableDatasetProperties.setAssetRemark(datasetUpdateInput.getEditableProperties().getAssetRemark());
+      editableDatasetProperties.setAssetName(
+          datasetUpdateInput.getEditableProperties().getAssetName());
+      editableDatasetProperties.setAssetDescription(
+          datasetUpdateInput.getEditableProperties().getAssetDescription());
+      editableDatasetProperties.setAssetPosition(
+          datasetUpdateInput.getEditableProperties().getAssetPosition());
+      editableDatasetProperties.setAssetVersion(
+          datasetUpdateInput.getEditableProperties().getAssetVersion());
+      editableDatasetProperties.setAssetVersionDescription(
+          datasetUpdateInput.getEditableProperties().getAssetVersionDescription());
+      editableDatasetProperties.setAssetRemark(
+          datasetUpdateInput.getEditableProperties().getAssetRemark());
       editableDatasetProperties.setLastModified(auditStamp);
       editableDatasetProperties.setCreated(auditStamp);
       proposals.add(

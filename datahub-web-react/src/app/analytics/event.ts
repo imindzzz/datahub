@@ -300,6 +300,8 @@ export const EntityActionType = {
     UpdateDescription: 'UpdateDescription',
     UpdateProperties: 'UpdateProperties',
     UpdateSchemaDescription: 'UpdateSchemaDescription',
+    UpdateSchemaBusinessDescription: 'UpdateSchemaBusinessDescription',
+    UpdateSchemaBusinessRelation: 'UpdateSchemaBusinessRelation',
     UpdateSchemaTags: 'UpdateSchemaTags',
     UpdateSchemaTerms: 'UpdateSchemaTerms',
     ClickExternalUrl: 'ClickExternalUrl',

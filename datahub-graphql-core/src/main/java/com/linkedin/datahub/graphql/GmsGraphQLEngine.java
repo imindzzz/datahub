@@ -216,6 +216,8 @@ import com.linkedin.datahub.graphql.resolvers.mutate.RemoveLinkResolver;
 import com.linkedin.datahub.graphql.resolvers.mutate.RemoveOwnerResolver;
 import com.linkedin.datahub.graphql.resolvers.mutate.RemoveTagResolver;
 import com.linkedin.datahub.graphql.resolvers.mutate.RemoveTermResolver;
+import com.linkedin.datahub.graphql.resolvers.mutate.UpdateBusinessDescriptionResolver;
+import com.linkedin.datahub.graphql.resolvers.mutate.UpdateBusinessRelationResolver;
 import com.linkedin.datahub.graphql.resolvers.mutate.UpdateDescriptionResolver;
 import com.linkedin.datahub.graphql.resolvers.mutate.UpdateNameResolver;
 import com.linkedin.datahub.graphql.resolvers.mutate.UpdateParentNodeResolver;
@@ -640,7 +642,8 @@ public class GmsGraphQLEngine {
             restrictedType);
     this.loadableTypes = new ArrayList<>(entityTypes);
     // Extend loadable types with types from the plugins
-    // This allows us to offer search and browse capabilities out of the box for those types
+    // This allows us to offer search and browse capabilities out of the box for
+    // those types
     for (GmsGraphQLPlugin plugin : this.graphQLPlugins) {
       this.entityTypes.addAll(plugin.getEntityTypes());
       Collection<? extends LoadableType<?, ?>> pluginLoadableTypes = plugin.getLoadableTypes();
@@ -1108,6 +1111,12 @@ public class GmsGraphQLEngine {
                 .dataFetcher(
                     "updateDescription",
                     new UpdateDescriptionResolver(entityService, this.entityClient))
+                .dataFetcher(
+                    "updateBusinessDescription",
+                    new UpdateBusinessDescriptionResolver(entityService, this.entityClient))
+                .dataFetcher(
+                    "updateBusinessRelation",
+                    new UpdateBusinessRelationResolver(entityService, this.entityClient))
                 .dataFetcher("addOwner", new AddOwnerResolver(entityService))
                 .dataFetcher("addOwners", new AddOwnersResolver(entityService))
                 .dataFetcher("batchAddOwners", new BatchAddOwnersResolver(entityService))
@@ -2651,7 +2660,8 @@ public class GmsGraphQLEngine {
   }
 
   private void configurePolicyResolvers(final RuntimeWiring.Builder builder) {
-    // Register resolvers for "resolvedUsers" and "resolvedGroups" field of the Policy type.
+    // Register resolvers for "resolvedUsers" and "resolvedGroups" field of the
+    // Policy type.
     builder.type(
         "ActorFilter",
         typeWiring ->

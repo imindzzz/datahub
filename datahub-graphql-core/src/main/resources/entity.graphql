@@ -543,6 +543,16 @@ type Mutation {
     updateDescription(input: DescriptionUpdateInput!): Boolean
 
     """
+    updateBusinessDescription Schema
+    """
+    updateBusinessDescription(input: BusinessDescriptionUpdateInput!): Boolean
+
+    """
+    updateBusinessRelation Schema
+    """
+    updateBusinessRelation(input: BusinessRelationUpdateInput!): Boolean
+
+    """
     Remove a user. Requires Manage Users & Groups Platform Privilege
     """
     removeUser(urn: String!): Boolean
@@ -3184,6 +3194,16 @@ type SchemaField {
     description: String
 
     """
+    Edited businessDescription of the field
+    """
+    businessDescription: String
+    
+    """
+    Edited businessRelation of the field
+    """
+    businessRelation: String
+
+    """
     Platform independent field type of the field
     """
     type: SchemaFieldDataType!
@@ -3258,6 +3278,16 @@ type EditableSchemaFieldInfo {
     Edited description of the field
     """
     description: String
+
+    """
+    Edited businessDescription of the field
+    """
+    businessDescription: String
+    
+    """
+    Edited businessRelation of the field
+    """
+    businessRelation: String
 
     """
     Deprecated, use tags field instead
@@ -8415,6 +8445,56 @@ input DescriptionUpdateInput {
     The new description
     """
     description: String!
+
+    """
+    The primary key of the resource to attach the description to, eg dataset urn
+    """
+    resourceUrn: String!
+
+    """
+    An optional sub resource type
+    """
+    subResourceType: SubResourceType
+
+    """
+    A sub resource identifier, eg dataset field path
+    """
+    subResource: String
+}
+
+"""
+BusinessDescriptionUpdateInput
+"""
+input BusinessDescriptionUpdateInput {
+    """
+    The new business description
+    """
+    businessDescription: String!
+
+    """
+    The primary key of the resource to attach the description to, eg dataset urn
+    """
+    resourceUrn: String!
+
+    """
+    An optional sub resource type
+    """
+    subResourceType: SubResourceType
+
+    """
+    A sub resource identifier, eg dataset field path
+    """
+    subResource: String
+}
+
+"""
+BusinessRelationUpdateInput
+"""
+input BusinessRelationUpdateInput {
+    """
+    The new business description
+    """
+    businessRelation: String!
 
     """
     The primary key of the resource to attach the description to, eg dataset urn

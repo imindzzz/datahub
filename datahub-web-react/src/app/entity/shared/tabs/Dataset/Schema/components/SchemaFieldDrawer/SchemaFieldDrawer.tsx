@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import DrawerHeader from './DrawerHeader';
 import FieldHeader from './FieldHeader';
 import FieldDescription from './FieldDescription';
+import FieldBusinessDescription from './FieldBusinessDescription';
+import FieldBusinessRelation from './FieldBusinessRelation';
 import { EditableSchemaMetadata, SchemaField } from '../../../../../../../../types.generated';
 import { pathMatchesNewPath } from '../../../../../../dataset/profile/schema/utils/utils';
 import FieldUsageStats from './FieldUsageStats';
@@ -71,6 +73,8 @@ export default function SchemaFieldDrawer({
                     <FieldHeader expandedField={expandedField} />
                     <MetadataSections>
                         <FieldDescription expandedField={expandedField} editableFieldInfo={editableFieldInfo} />
+                        <FieldBusinessDescription expandedField={expandedField} editableFieldInfo={editableFieldInfo} />
+                        <FieldBusinessRelation expandedField={expandedField} editableFieldInfo={editableFieldInfo} />
                         <FieldUsageStats expandedField={expandedField} />
                         <FieldTags expandedField={expandedField} editableSchemaMetadata={editableSchemaMetadata} />
                         <FieldTerms expandedField={expandedField} editableSchemaMetadata={editableSchemaMetadata} />

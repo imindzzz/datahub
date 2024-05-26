@@ -18,6 +18,8 @@ query getVersionedDataset($urn: String!, $versionStamp: String) {
             editableSchemaFieldInfo {
                 fieldPath
                 description
+                businessDescription
+                businessRelation
                 globalTags {
                     ...globalTagsFields
                 }
