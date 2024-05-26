@@ -285,6 +285,8 @@ fragment datasetSchema on Dataset {
         editableSchemaFieldInfo {
             fieldPath
             description
+            businessDescription
+            businessRelation
             globalTags {
                 ...globalTagsFields
             }

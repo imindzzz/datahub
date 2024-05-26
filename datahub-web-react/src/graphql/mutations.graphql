@@ -57,6 +57,12 @@ mutation batchRemoveOwners($input: BatchRemoveOwnersInput!) {
 mutation updateDescription($input: DescriptionUpdateInput!) {
     updateDescription(input: $input)
 }
+mutation updateBusinessDescription($input: BusinessDescriptionUpdateInput!) {
+    updateBusinessDescription(input: $input)
+}
+mutation updateBusinessRelation($input: BusinessRelationUpdateInput!) {
+    updateBusinessRelation(input: $input)
+}
 
 mutation setDomain($entityUrn: String!, $domainUrn: String!) {
     setDomain(entityUrn: $entityUrn, domainUrn: $domainUrn)

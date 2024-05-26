@@ -28,6 +28,12 @@ public class EditableSchemaFieldInfoMapper {
     if (input.hasDescription()) {
       result.setDescription((input.getDescription()));
     }
+    if (input.hasBusinessDescription()) {
+      result.setBusinessDescription((input.getBusinessDescription()));
+    }
+    if (input.hasBusinessRelation()) {
+      result.setBusinessRelation((input.getBusinessRelation()));
+    }
     if (input.hasFieldPath()) {
       result.setFieldPath((input.getFieldPath()));
     }

@@ -3046,6 +3046,26 @@
                 "fieldType" : "TEXT"
               }
             }, {
+              "name" : "businessDescription",
+              "type" : "string",
+              "doc" : "BusinessDescription",
+              "optional" : true,
+              "Searchable" : {
+                "boostScore" : 0.1,
+                "fieldName" : "editedFieldBusinessDescription",
+                "fieldType" : "TEXT"
+              }
+            }, {
+              "name" : "businessRelation",
+              "type" : "string",
+              "doc" : "BusinessRelation",
+              "optional" : true,
+              "Searchable" : {
+                "boostScore" : 0.1,
+                "fieldName" : "editedFieldBusinessRelation",
+                "fieldType" : "TEXT"
+              }
+            }, {
               "name" : "globalTags",
               "type" : "com.linkedin.common.GlobalTags",
               "doc" : "Tags associated with the field",

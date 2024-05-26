@@ -23,6 +23,26 @@ record EditableSchemaFieldInfo {
   description: optional string
 
   /**
+   * BusinessDescription
+   */
+  @Searchable = {
+    "fieldName": "editedFieldBusinessDescription",
+    "fieldType": "TEXT",
+    "boostScore": 0.1
+  }
+  businessDescription: optional string
+
+  /**
+   * BusinessRelation
+   */
+  @Searchable = {
+    "fieldName": "editedFieldBusinessRelation",
+    "fieldType": "TEXT",
+    "boostScore": 0.1
+  }
+  businessRelation: optional string
+
+  /**
    * Tags associated with the field
    */
   @Relationship = {

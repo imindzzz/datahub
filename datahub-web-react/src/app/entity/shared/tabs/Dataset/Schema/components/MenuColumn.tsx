@@ -39,13 +39,13 @@ export default function MenuColumn({ field }: Props) {
         <Dropdown
             overlay={
                 <Menu>
-                    <Menu.Item key="0">
+                    {/* <Menu.Item key="0">
                         <MenuItem
                             onClick={() => routeToTab({ tabName: 'Lineage', tabParams: { column: field.fieldPath } })}
                         >
                             <ImpactAnalysisIcon /> &nbsp; See Column Lineage
                         </MenuItem>
-                    </Menu.Item>
+                    </Menu.Item> */}
                     {navigator.clipboard && (
                         <Menu.Item key="1">
                             <MenuItem

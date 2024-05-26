@@ -1,3 +1,42 @@
+
+
+docker save acryldata/datahub-frontend-react:debug acryldata/datahub-upgrade:debug acryldata/datahub-gms:debug acryldata/datahub-mysql-setup:debug acryldata/datahub-kafka-setup:debug acryldata/datahub-elasticsearch-setup:debug > datahub.tar
+docker save \
+  acryldata/datahub-frontend-react:debug \
+  acryldata/datahub-upgrade:debug \
+  acryldata/datahub-gms:debug \
+  acryldata/datahub-mysql-setup:debug \
+  acryldata/datahub-kafka-setup:debug \
+  acryldata/datahub-elasticsearch-setup:debug > datahub.tar
+
+docker load < datahub.tar
+
+
+docker save acryldata/datahub-frontend-react:v0.13.3-SNAPSHOT acryldata/datahub-upgrade:v0.13.3-SNAPSHOT acryldata/datahub-gms:v0.13.3-SNAPSHOT acryldata/datahub-mysql-setup:v0.13.3-SNAPSHOT acryldata/datahub-kafka-setup:v0.13.3-SNAPSHOT acryldata/datahub-elasticsearch-setup:v0.13.3-SNAPSHOT > datahub.prod.tar
+
+docker save \
+  acryldata/datahub-frontend-react:v0.13.3-SNAPSHOT \
+  acryldata/datahub-upgrade:v0.13.3-SNAPSHOT \
+  acryldata/datahub-gms:v0.13.3-SNAPSHOT \
+  acryldata/datahub-mysql-setup:v0.13.3-SNAPSHOT \
+  acryldata/datahub-kafka-setup:v0.13.3-SNAPSHOT \
+  acryldata/datahub-elasticsearch-setup:v0.13.3-SNAPSHOT > datahub.prod.tar
+
+docker load < datahub.prod.tar
+
+https://ps-training.oss-cn-chengdu.aliyuncs.com/datahub.prod.tar
+
+git clone https://github.com/imindzzz/datahub.git datahub -branch hotfix/v0.13.2-fuchuan --single-branch
+git checkout -b hotfix/v0.13.2-fuchuan origin/hotfix/v0.13.2-fuchuan
+
+docker compose -p datahub --profile debug -f docker-compose.yml up
+
+docker compose -p datahub --profile debug -f docker-compose.yml  restart datahub-gms-debug system-update-debug frontend-debug
+
+scp datahub.tar root@192.168.124.22:/root
+
+https://cloud.tencent.com/developer/article/1701451
+yum -y install docker-ce-26.1.3-1.el7
 # Docker Compose Profiles
 
 This directory contains a set of docker compose definitions which are designed to run several configurations

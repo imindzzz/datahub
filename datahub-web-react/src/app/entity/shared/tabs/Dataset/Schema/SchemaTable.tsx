@@ -14,6 +14,8 @@ import {
 import useSchemaTitleRenderer from '../../../../dataset/profile/schema/utils/schemaTitleRenderer';
 import { ExtendedSchemaFields } from '../../../../dataset/profile/schema/utils/types';
 import useDescriptionRenderer from './utils/useDescriptionRenderer';
+import useBusinessDescriptionRenderer from './utils/useBusinessDescriptionRenderer';
+import useBusinessRelationRenderer from './utils/useBusinessRelationRenderer';
 import useUsageStatsRenderer from './utils/useUsageStatsRenderer';
 import useTagsAndTermsRenderer from './utils/useTagsAndTermsRenderer';
 import ExpandIcon from './components/ExpandIcon';
@@ -103,6 +105,8 @@ export default function SchemaTable({
     const schemaFields = schemaMetadata ? schemaMetadata.fields : inputFields;
 
     const descriptionRender = useDescriptionRenderer(editableSchemaMetadata);
+    const businessDescriptionRender = useBusinessDescriptionRenderer(editableSchemaMetadata);
+    const businessRelationRender = useBusinessRelationRenderer(editableSchemaMetadata);
     const usageStatsRenderer = useUsageStatsRenderer(usageStats);
     const tagRenderer = useTagsAndTermsRenderer(
         editableSchemaMetadata,
@@ -144,6 +148,20 @@ export default function SchemaTable({
         dataIndex: 'description',
         key: 'description',
         render: descriptionRender,
+    };
+    const businessDescriptionColumn = {
+        width: '22%',
+        title: 'Business Description',
+        dataIndex: 'businessDescription',
+        key: 'businessDescription',
+        render: businessDescriptionRender,
+    };
+    const businessRelationColumn = {
+        width: '22%',
+        title: 'Business Relation',
+        dataIndex: 'businessRelation',
+        key: 'businessRelation',
+        render: businessRelationRender,
     };
 
     const tagColumn = {
@@ -211,7 +229,14 @@ export default function SchemaTable({
         render: (field: SchemaField) => <PropertiesColumn field={field} />,
     };
 
-    let allColumns: ColumnsType<ExtendedSchemaFields> = [fieldColumn, descriptionColumn, tagColumn, termColumn];
+    let allColumns: ColumnsType<ExtendedSchemaFields> = [
+        fieldColumn,
+        descriptionColumn,
+        businessDescriptionColumn,
+        businessRelationColumn,
+        tagColumn,
+        termColumn,
+    ];
 
     if (businessAttributesFlag) {
         allColumns = [...allColumns, businessAttributeColumn];
