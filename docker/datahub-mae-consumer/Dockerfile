@@ -21,6 +21,8 @@ RUN apk --no-cache --update add openssl git tar curl
 
 WORKDIR /go/src/github.com/jwilder/dockerize
 
+RUN go env -w GOPROXY=https://goproxy.cn
+
 RUN go install github.com/jwilder/dockerize@$DOCKERIZE_VERSION
 
 FROM alpine:3.18 AS base
