@@ -29,6 +29,7 @@ import { SidebarSiblingsSection } from '../shared/containers/profile/sidebar/Sid
 import { DatasetStatsSummarySubHeader } from './profile/stats/stats/DatasetStatsSummarySubHeader';
 import { MatchedFieldList } from '../../search/matches/MatchedFieldList';
 import { EmbedTab } from '../shared/tabs/Embed/EmbedTab';
+import { ExcelPreviewTab } from '../shared/tabs/ExcelPreview/ExcelPreviewTab';
 import EmbeddedProfile from '../shared/embed/EmbeddedProfile';
 import DataProductSection from '../shared/containers/profile/sidebar/DataProduct/DataProductSection';
 import { getDataProduct } from '../shared/utils';
@@ -218,6 +219,10 @@ export class DatasetEntity implements Entity<Dataset> {
                         const activeIncidentCount = dataset?.dataset?.activeIncidents.total;
                         return `Incidents${(activeIncidentCount && ` (${activeIncidentCount})`) || ''}`;
                     },
+                },
+                {
+                    name: 'Excel Preview',
+                    component: ExcelPreviewTab,
                 },
             ]}
             sidebarSections={this.getSidebarSections()}
