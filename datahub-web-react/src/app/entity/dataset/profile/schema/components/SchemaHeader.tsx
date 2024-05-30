@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { Button, Input, Popover, Select, Tooltip, Typography } from 'antd';
 import { debounce } from 'lodash';
@@ -9,6 +9,7 @@ import {
     QuestionCircleOutlined,
     SearchOutlined,
     TableOutlined,
+    UploadOutlined,
 } from '@ant-design/icons';
 import styled from 'styled-components/macro';
 import CustomPagination from './CustomPagination';
@@ -18,6 +19,7 @@ import { toRelativeTimeString } from '../../../../../shared/time/timeUtils';
 import { ANTD_GRAY, REDESIGN_COLORS } from '../../../../shared/constants';
 import { navigateToVersionedDatasetUrl } from '../../../../shared/tabs/Dataset/Schema/utils/navigateToVersionedDatasetUrl';
 import getSchemaFilterFromQueryString from '../../../../shared/tabs/Dataset/Schema/utils/getSchemaFilterFromQueryString';
+import ImportSchemaModal from './ImportSchemaModal';
 
 const SchemaHeaderContainer = styled.div`
     display: flex;
@@ -37,6 +39,7 @@ const LeftButtonsGroup = styled.div`
     &&& {
         display: flex;
         justify-content: left;
+        align-items: center;
         width: 100%;
     }
 `;
@@ -164,6 +167,9 @@ export default function SchemaHeader({
 }: Props) {
     const history = useHistory();
     const location = useLocation();
+
+    const [importSchemaModalOpen, setImportSchemaModalOpen] = useState(false);
+
     const onVersionChange = (version1, version2) => {
         if (version1 === null || version2 === null) {
             return;
@@ -248,6 +254,24 @@ export default function SchemaHeader({
                             prefix={<SearchOutlined />}
                         />
                     )}
+                    <Button
+                        type="primary"
+                        onClick={() => {
+                            setImportSchemaModalOpen(true);
+                        }}
+                        style={{
+                            marginLeft: '20px',
+                        }}
+                        icon={<UploadOutlined />}
+                    >
+                        Import Schema
+                    </Button>
+                    <ImportSchemaModal
+                        open={importSchemaModalOpen}
+                        onClose={() => {
+                            setImportSchemaModalOpen(false);
+                        }}
+                    />
                 </LeftButtonsGroup>
                 <RightButtonsGroup>
                     <Tooltip title={schemaAuditToggleText}>
