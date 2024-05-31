@@ -45,6 +45,7 @@ VOLUME [ "/datahub-frontend" ]
 FROM ${APP_ENV}-install AS final
 COPY --chown=datahub:datahub --chmod=755 ./docker/datahub-frontend/start.sh /
 USER datahub
+RUN mkdir /home/datahub/excels
 
 ARG SERVER_PORT=9002
 ENV SERVER_PORT=$SERVER_PORT

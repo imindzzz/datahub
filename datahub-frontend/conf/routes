@@ -49,5 +49,8 @@ GET           /node_modules/*file                                              c
 GET           /manifest.json                                                   controllers.Assets.at(path="/public", file="manifest.json")
 GET           /robots.txt                                                      controllers.Assets.at(path="/public", file="robots.txt")
 
+GET           /excels/*file                                                    controllers.Application.excels(file)
+
+
 # Wildcard route accepts any routes and delegates to serveAsset which in turn serves the React Bundle's index.html
 GET           /*path                                                           controllers.Application.index(path)

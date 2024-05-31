@@ -13,6 +13,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.linkedin.util.Pair;
 import com.typesafe.config.Config;
 import java.io.InputStream;
+import java.io.File;
 import java.net.URI;
 import java.time.Duration;
 import java.util.List;
@@ -87,6 +88,20 @@ public class Application extends Controller {
   @Nonnull
   public Result index(@Nullable String path) {
     return serveAsset("");
+  }
+
+  /**
+   * <p>用于 Excel Preview </p>
+   * <p>docker volumes 映射 /home/tempuser/files:/home/datahub/excels</p>
+   * 
+   * <p>参考官方 ExternalAssets 源码</p>
+   * 
+   * <p>https://www.playframework.com/documentation/2.8.x/api/scala/controllers/ExternalAssets.html</p>
+   * <p>https://github.com/playframework/playframework/blob/main/core/play/src/main/scala/play/api/controllers/ExternalAssets.scala</p>
+   */
+  @Nonnull
+  public Result excels(@Nullable String file) {
+    return ok(new File("/home/datahub/excels", file)).withHeader("Cache-Control", "max-age=3600");
   }
 
   /**

@@ -20,6 +20,7 @@ services:
         condition: service_healthy
     volumes:
       - ${HOME}/.datahub/plugins:/etc/datahub/plugins
+      - ${HOME}/.datahub/plugins:/etc/datahub/plugins
   datahub-actions:
     hostname: actions
     image: ${DATAHUB_ACTIONS_IMAGE:-acryldata/datahub-actions}:${ACTIONS_VERSION:-head}
