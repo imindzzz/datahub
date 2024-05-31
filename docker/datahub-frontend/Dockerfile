@@ -44,6 +44,7 @@ FROM ${APP_ENV}-install as final
 COPY ./docker/datahub-frontend/start.sh /
 RUN chown datahub:datahub /start.sh && chmod 755 /start.sh
 USER datahub
+RUN mkdir /home/datahub/excels
 
 ARG SERVER_PORT=9002
 ENV SERVER_PORT=$SERVER_PORT
