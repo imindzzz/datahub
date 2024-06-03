@@ -101,7 +101,7 @@ public class Application extends Controller {
    */
   @Nonnull
   public Result excels(@Nullable String file) {
-    return ok(new File("/home/datahub/excels", file)).withHeader("Cache-Control", "max-age=3600");
+    return ok(new File("/home/datahub/excels", file)).withHeader("Cache-Control", "max-age=60");
   }
 
   /**
