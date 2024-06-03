@@ -20,7 +20,7 @@ services:
         condition: service_healthy
     volumes:
       - ${HOME}/.datahub/plugins:/etc/datahub/plugins
-      - ${HOME}/.datahub/plugins:/etc/datahub/plugins
+      - /home/tempuser/files:/home/datahub/excels
   datahub-actions:
     hostname: actions
     image: ${DATAHUB_ACTIONS_IMAGE:-acryldata/datahub-actions}:${ACTIONS_VERSION:-head}
