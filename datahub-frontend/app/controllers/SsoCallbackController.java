@@ -69,7 +69,7 @@ public class SsoCallbackController extends CallbackController {
               (res, e) -> {
                 if (e != null) {
                   log.error(
-                      "Caught exception while attempting to handle SSO callback! It's likely that SSO integration is mis-configured.",
+                      "Caught exception while attempting to handle SSO callback! It's likely that SSO integration is mis-configured.111",
                       e);
                   return Results.redirect(
                           String.format(
