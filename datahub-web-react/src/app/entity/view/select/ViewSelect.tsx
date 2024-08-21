@@ -202,7 +202,7 @@ export const ViewSelect = ({ dropdownStyle = {} }: Props) => {
                 data-testid="view-select"
                 onChange={() => (selectRef?.current as any)?.blur()}
                 value={(foundSelectedUrn && selectedUrn) || undefined}
-                placeholder="View all"
+                placeholder="查看所有"
                 onSelect={onSelectView}
                 onClear={onClear}
                 ref={selectRef}

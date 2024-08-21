@@ -37,7 +37,7 @@ export const DataContractBuilderModal = ({ entityUrn, initialState, onSubmit, on
                 onCancel?.();
             },
             onCancel() {},
-            okText: 'Yes',
+            okText: '是',
             maskClosable: true,
             closable: true,
         });

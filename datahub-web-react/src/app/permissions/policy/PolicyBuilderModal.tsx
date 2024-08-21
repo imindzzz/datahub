@@ -157,7 +157,7 @@ export default function PolicyBuilderModal({ policy, setPolicy, visible, onClose
                 onClose();
             },
             onCancel() {},
-            okText: 'Yes',
+            okText: '是',
             maskClosable: true,
             closable: true,
         });

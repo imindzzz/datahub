@@ -53,7 +53,7 @@ type Props = {
     ) => void;
 };
 
-const SUGGESTED_DOMAIN_NAMES = ['Engineering', 'Marketing', 'Sales', 'Product'];
+const SUGGESTED_DOMAIN_NAMES = ['工程', '市场', '销售', '产品'];
 
 const ID_FIELD_NAME = 'id';
 const NAME_FIELD_NAME = 'name';
@@ -114,13 +114,13 @@ export default function CreateDomainModal({ onClose, onCreate }: Props) {
 
     return (
         <Modal
-            title="Create New Domain"
+            title="创建新域"
             visible
             onCancel={onClose}
             footer={
                 <>
                     <Button onClick={onClose} type="text">
-                        Cancel
+                        取消
                     </Button>
                     <Button
                         id="createDomainButton"
@@ -128,7 +128,7 @@ export default function CreateDomainModal({ onClose, onCreate }: Props) {
                         onClick={onCreateDomain}
                         disabled={!createButtonEnabled}
                     >
-                        Create
+                        创建
                     </Button>
                 </>
             }
@@ -142,14 +142,14 @@ export default function CreateDomainModal({ onClose, onCreate }: Props) {
                 }}
             >
                 {isNestedDomainsEnabled && (
-                    <FormItemWithMargin label={<FormItemLabel>Parent (optional)</FormItemLabel>}>
+                    <FormItemWithMargin label={<FormItemLabel>父级 (可选)</FormItemLabel>}>
                         <DomainParentSelect
                             selectedParentUrn={selectedParentUrn}
                             setSelectedParentUrn={setSelectedParentUrn}
                         />
                     </FormItemWithMargin>
                 )}
-                <FormItemWithMargin label={<FormItemLabel>Name</FormItemLabel>}>
+                <FormItemWithMargin label={<FormItemLabel>名称</FormItemLabel>}>
                     <FormItemNoMargin
                         name={NAME_FIELD_NAME}
                         rules={[
@@ -162,7 +162,7 @@ export default function CreateDomainModal({ onClose, onCreate }: Props) {
                         ]}
                         hasFeedback
                     >
-                        <Input data-testid="create-domain-name" placeholder="A name for your domain" />
+                        <Input data-testid="create-domain-name" placeholder="域名称" />
                     </FormItemNoMargin>
                     <SuggestedNamesGroup>
                         {SUGGESTED_DOMAIN_NAMES.map((name) => {
@@ -183,8 +183,8 @@ export default function CreateDomainModal({ onClose, onCreate }: Props) {
                     </SuggestedNamesGroup>
                 </FormItemWithMargin>
                 <FormItemWithMargin
-                    label={<FormItemLabel>Description</FormItemLabel>}
-                    help="You can always change the description later."
+                    label={<FormItemLabel>描述</FormItemLabel>}
+                    help="你可稍后修改描述"
                 >
                     <FormItemNoMargin
                         name={DESCRIPTION_FIELD_NAME}
@@ -192,19 +192,19 @@ export default function CreateDomainModal({ onClose, onCreate }: Props) {
                         hasFeedback
                     >
                         <Input.TextArea
-                            placeholder="A description for your domain"
+                            placeholder="域描述"
                             data-testid="create-domain-description"
                         />
                     </FormItemNoMargin>
                 </FormItemWithMargin>
                 <Collapse ghost>
-                    <Collapse.Panel header={<AdvancedLabel>Advanced Options</AdvancedLabel>} key="1">
+                    <Collapse.Panel header={<AdvancedLabel>高级选项</AdvancedLabel>} key="1">
                         <FormItemWithMargin
-                            label={<Typography.Text strong>Domain Id</Typography.Text>}
-                            help="By default, a random UUID will be generated to uniquely identify this domain. If
-                                you'd like to provide a custom id instead to more easily keep track of this domain,
-                                you may provide it here. Be careful, you cannot easily change the domain id after
-                                creation."
+                            label={<Typography.Text strong>域ID</Typography.Text>}
+                            // help="By default, a random UUID will be generated to uniquely identify this domain. If
+                            //     you'd like to provide a custom id instead to more easily keep track of this domain,
+                            //     you may provide it here. Be careful, you cannot easily change the domain id after
+                            //     creation."
                         >
                             <FormItemNoMargin
                                 name={ID_FIELD_NAME}
@@ -219,7 +219,7 @@ export default function CreateDomainModal({ onClose, onCreate }: Props) {
                                     }),
                                 ]}
                             >
-                                <Input data-testid="create-domain-id" placeholder="engineering" />
+                                <Input data-testid="create-domain-id" placeholder="域ID" />
                             </FormItemNoMargin>
                         </FormItemWithMargin>
                     </Collapse.Panel>

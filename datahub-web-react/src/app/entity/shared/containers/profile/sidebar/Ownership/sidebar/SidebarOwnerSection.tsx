@@ -57,7 +57,7 @@ export const SidebarOwnerSection = ({ properties, readOnly }: Props) => {
 
     return (
         <div id={ENTITY_PROFILE_OWNERS_ID}>
-            <SidebarHeader title="Owners" />
+            <SidebarHeader title="所有者" />
             <div>
                 {ownershipTypeNames.map((ownershipTypeName) => {
                     const ownershipType = ownershipTypesMap.get(ownershipTypeName) as OwnershipTypeEntity;
@@ -75,7 +75,7 @@ export const SidebarOwnerSection = ({ properties, readOnly }: Props) => {
                         onClick={() => setShowAddModal(true)}
                         data-testid="add-owners-button"
                     >
-                        <PlusOutlined /> Add Owners
+                        <PlusOutlined /> 添加所有者
                     </Button>
                 )}
             </div>

@@ -108,7 +108,15 @@ function PlatformContentView(props: Props) {
     return (
         <PlatformContentWrapper>
             {typeIcon && <LogoIcon>{typeIcon}</LogoIcon>}
-            <PlatformText>{entityType}</PlatformText>
+            <PlatformText>{
+                {
+                    'Domain': '域',
+                    'Database': '数据库',
+                    'Schema': '结构',
+                    'Table': '表',
+
+                }[entityType!] || entityType + 1
+            }</PlatformText>
             {(!!platformName || !!instanceId || !!parentContainers?.length || !!parentEntities?.length) && (
                 <PlatformDivider />
             )}

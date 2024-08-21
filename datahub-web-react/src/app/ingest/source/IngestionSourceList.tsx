@@ -364,7 +364,7 @@ export const IngestionSourceList = () => {
                 deleteIngestionSource(urn);
             },
             onCancel() {},
-            okText: 'Yes',
+            okText: '是',
             maskClosable: true,
             closable: true,
         });

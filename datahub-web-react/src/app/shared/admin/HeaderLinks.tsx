@@ -85,10 +85,10 @@ export function HeaderLinks(props: Props) {
                 <LinkWrapper>
                     <Link to="/analytics">
                         <Button type="text">
-                            <Tooltip title="View DataHub usage analytics">
+                            <Tooltip title="查看  DataHub使用情况分析">
                                 <NavTitleContainer>
                                     <BarChartOutlined />
-                                    <NavTitleText>Analytics</NavTitleText>
+                                    <NavTitleText>分析</NavTitleText>
                                 </NavTitleContainer>
                             </Tooltip>
                         </Button>
@@ -103,9 +103,9 @@ export function HeaderLinks(props: Props) {
                             <Link to="/glossary">
                                 <NavTitleContainer>
                                     <BookOutlined style={{ fontSize: '14px', fontWeight: 'bold' }} />
-                                    <NavTitleText>Glossary</NavTitleText>
+                                    <NavTitleText>术语</NavTitleText>
                                 </NavTitleContainer>
-                                <NavTitleDescription>View and modify your data dictionary</NavTitleDescription>
+                                <NavTitleDescription>查看和编辑你的数据字典</NavTitleDescription>
                             </Link>
                         </MenuItem>
                         <MenuItem key="1">
@@ -117,9 +117,9 @@ export function HeaderLinks(props: Props) {
                                             fontWeight: 'bold',
                                         }}
                                     />
-                                    <NavTitleText>Domains</NavTitleText>
+                                    <NavTitleText>域</NavTitleText>
                                 </NavTitleContainer>
-                                <NavTitleDescription>Manage related groups of data assets</NavTitleDescription>
+                                <NavTitleDescription>管理相关的数据资产组</NavTitleDescription>
                             </Link>
                         </MenuItem>
                         {businessAttributesFlag && (
@@ -143,7 +143,7 @@ export function HeaderLinks(props: Props) {
             >
                 <LinkWrapper>
                     <Button type="text">
-                        <SolutionOutlined /> Govern <DownOutlined style={{ fontSize: '6px' }} />
+                        <SolutionOutlined /> 治理 <DownOutlined style={{ fontSize: '6px' }} />
                     </Button>
                 </LinkWrapper>
             </Dropdown>
@@ -151,10 +151,10 @@ export function HeaderLinks(props: Props) {
                 <LinkWrapper>
                     <Link to="/ingestion">
                         <Button id={HOME_PAGE_INGESTION_ID} type="text">
-                            <Tooltip title="Connect DataHub to your organization's data sources">
+                            <Tooltip title="将 DataHub 连接到组织的数据源">
                                 <NavTitleContainer>
                                     <ApiOutlined />
-                                    <NavTitleText>Ingestion</NavTitleText>
+                                    <NavTitleText>提取数据</NavTitleText>
                                 </NavTitleContainer>
                             </Tooltip>
                         </Button>
@@ -165,7 +165,7 @@ export function HeaderLinks(props: Props) {
                 <LinkWrapper style={{ marginRight: 12 }}>
                     <Link to="/settings">
                         <Button type="text">
-                            <Tooltip title="Manage your DataHub settings">
+                            <Tooltip title="管理你的 DataHub 设置">
                                 <SettingOutlined />
                             </Tooltip>
                         </Button>

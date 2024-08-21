@@ -56,7 +56,7 @@ export const ViewBuilderModal = ({ mode, urn, initialState, onSubmit, onCancel }
                 onCancel?.();
             },
             onCancel() {},
-            okText: 'Yes',
+            okText: '是',
             maskClosable: true,
             closable: true,
         });

@@ -107,10 +107,10 @@ export class MLFeatureTableEntity implements Entity<MlFeatureTable> {
                     name: 'Sources',
                     component: Sources,
                 },
-                {
-                    name: 'Properties',
-                    component: PropertiesTab,
-                },
+                // {
+                //     name: 'Properties',
+                //     component: PropertiesTab,
+                // },
                 {
                     name: 'Documentation',
                     component: DocumentationTab,

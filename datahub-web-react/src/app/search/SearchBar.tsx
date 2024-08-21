@@ -79,7 +79,7 @@ const EXACT_AUTOCOMPLETE_OPTION_TYPE = 'exact_query';
 const RELEVANCE_QUERY_OPTION_TYPE = 'recommendation';
 
 const QUICK_FILTER_AUTO_COMPLETE_OPTION = {
-    label: <EntityTypeLabel>Filter by</EntityTypeLabel>,
+    label: <EntityTypeLabel>过滤</EntityTypeLabel>,
     options: [
         {
             value: 'quick-filter-unique-key',
@@ -198,7 +198,7 @@ export const SearchBar = ({
             type: '',
             label: (
                 <Button type="link" onClick={onClickExploreAll}>
-                    Explore all →
+                    探索全部 →
                 </Button>
             ),
             style: { marginLeft: 'auto', cursor: 'auto' },

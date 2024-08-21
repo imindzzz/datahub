@@ -33,7 +33,7 @@ export default function ShareButton({ urn, entityType, subType, name }: ShareBut
         >
             <StyledButton type="primary">
                 <StyledShareIcon />
-                Share
+                分享
             </StyledButton>
         </Dropdown>
     );

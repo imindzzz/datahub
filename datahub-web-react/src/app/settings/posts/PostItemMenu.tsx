@@ -44,7 +44,7 @@ export default function PostItemMenu({ title, urn, onDelete, onEdit }: Props) {
                 deletePost();
             },
             onCancel() {},
-            okText: 'Yes',
+            okText: '是',
             maskClosable: true,
             closable: true,
         });

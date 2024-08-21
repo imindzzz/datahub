@@ -89,15 +89,15 @@ export class DomainEntity implements Entity<Domain> {
                     name: 'Documentation',
                     component: DocumentationTab,
                 },
-                {
-                    id: EntityProfileTab.DATA_PRODUCTS_TAB,
-                    name: 'Data Products',
-                    component: DataProductsTab,
-                },
-                {
-                    name: 'Properties',
-                    component: PropertiesTab,
-                },
+                // {
+                //     id: EntityProfileTab.DATA_PRODUCTS_TAB,
+                //     name: 'Data Products',
+                //     component: DataProductsTab,
+                // },
+                // {
+                //     name: 'Properties',
+                //     component: PropertiesTab,
+                // },
             ]}
             sidebarSections={this.getSidebarSections()}
         />

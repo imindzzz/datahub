@@ -70,7 +70,7 @@ export const DomainSearchList = ({ content, onClick }: Props) => {
             <Link to={PageRoutes.DOMAINS}>
                 <HomePageButton type="link">
                     <AllDomainsWrapper>
-                        <AllDomainsText>View All Domains</AllDomainsText>
+                        <AllDomainsText>查看所有域</AllDomainsText>
                         <ArrowRightOutlined />
                     </AllDomainsWrapper>
                 </HomePageButton>

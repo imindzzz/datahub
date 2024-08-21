@@ -36,7 +36,7 @@ export const DescriptionPreviewModal = ({ description, editMode, onClose }: Desc
                     onClose();
                 },
                 onCancel() {},
-                okText: 'Yes',
+                okText: '是',
                 maskClosable: true,
                 closable: true,
             });

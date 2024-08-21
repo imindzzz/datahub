@@ -104,10 +104,10 @@ export class MLModelGroupEntity implements Entity<MlModelGroup> {
                     name: 'Documentation',
                     component: DocumentationTab,
                 },
-                {
-                    name: 'Properties',
-                    component: PropertiesTab,
-                },
+                // {
+                //     name: 'Properties',
+                //     component: PropertiesTab,
+                // },
             ]}
             sidebarSections={this.getSidebarSections()}
         />

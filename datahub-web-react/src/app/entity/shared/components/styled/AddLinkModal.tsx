@@ -59,10 +59,10 @@ export const AddLinkModal = ({ buttonProps, refetch }: AddLinkProps) => {
     return (
         <>
             <Button data-testid="add-link-button" icon={<PlusOutlined />} onClick={showModal} {...buttonProps}>
-                Add Link
+            添加链接
             </Button>
             <Modal
-                title="Add Link"
+                title="添加链接"
                 visible={isModalVisible}
                 destroyOnClose
                 onCancel={handleClose}

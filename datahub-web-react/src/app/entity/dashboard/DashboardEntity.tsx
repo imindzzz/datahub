@@ -158,10 +158,10 @@ export class DashboardEntity implements Entity<Dashboard> {
                         defaultDirection: LineageDirection.Upstream,
                     },
                 },
-                {
-                    name: 'Properties',
-                    component: PropertiesTab,
-                },
+                // {
+                //     name: 'Properties',
+                //     component: PropertiesTab,
+                // },
                 {
                     name: 'Incidents',
                     component: IncidentTab,

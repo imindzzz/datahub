@@ -41,10 +41,10 @@ describe('EntityProfile', () => {
                                 name: 'Documentation',
                                 component: DocumentationTab,
                             },
-                            {
-                                name: 'Properties',
-                                component: PropertiesTab,
-                            },
+                            // {
+                            //     name: 'Properties',
+                            //     component: PropertiesTab,
+                            // },
                             {
                                 name: 'Lineage',
                                 component: LineageTab,
@@ -126,10 +126,10 @@ describe('EntityProfile', () => {
                                 name: 'Documentation',
                                 component: DocumentationTab,
                             },
-                            {
-                                name: 'Properties',
-                                component: PropertiesTab,
-                            },
+                            // {
+                            //     name: 'Properties',
+                            //     component: PropertiesTab,
+                            // },
                             {
                                 name: 'Lineage',
                                 component: LineageTab,
@@ -210,10 +210,10 @@ describe('EntityProfile', () => {
                                 name: 'Documentation',
                                 component: DocumentationTab,
                             },
-                            {
-                                name: 'Properties',
-                                component: PropertiesTab,
-                            },
+                            // {
+                            //     name: 'Properties',
+                            //     component: PropertiesTab,
+                            // },
                             {
                                 name: 'Lineage',
                                 component: LineageTab,
@@ -307,10 +307,10 @@ describe('EntityProfile', () => {
                                 name: 'Documentation',
                                 component: DocumentationTab,
                             },
-                            {
-                                name: 'Properties',
-                                component: PropertiesTab,
-                            },
+                            // {
+                            //     name: 'Properties',
+                            //     component: PropertiesTab,
+                            // },
                             {
                                 name: 'Lineage',
                                 component: LineageTab,
@@ -385,10 +385,10 @@ describe('EntityProfile', () => {
                                 name: 'Documentation',
                                 component: DocumentationTab,
                             },
-                            {
-                                name: 'Properties',
-                                component: PropertiesTab,
-                            },
+                            // {
+                            //     name: 'Properties',
+                            //     component: PropertiesTab,
+                            // },
                             {
                                 name: 'Lineage',
                                 component: LineageTab,

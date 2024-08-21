@@ -74,10 +74,10 @@ export class DataFlowEntity implements Entity<DataFlow> {
                     name: 'Documentation',
                     component: DocumentationTab,
                 },
-                {
-                    name: 'Properties',
-                    component: PropertiesTab,
-                },
+                // {
+                //     name: 'Properties',
+                //     component: PropertiesTab,
+                // },
                 {
                     name: 'Tasks',
                     component: DataFlowJobsTab,

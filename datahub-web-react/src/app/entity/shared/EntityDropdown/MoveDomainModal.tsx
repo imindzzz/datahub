@@ -66,17 +66,17 @@ function MoveDomainModal(props: Props) {
 
     return (
         <Modal
-            title="Move"
+            title="移动"
             data-testid="move-domain-modal"
             visible
             onCancel={onClose}
             footer={
                 <>
                     <Button onClick={onClose} type="text">
-                        Cancel
+                        取消
                     </Button>
                     <Button onClick={moveDomain} data-testid="move-domain-modal-move-button">
-                        Move
+                        移动
                     </Button>
                 </>
             }
@@ -85,7 +85,7 @@ function MoveDomainModal(props: Props) {
                 <Form.Item
                     label={
                         <Typography.Text strong>
-                            Move To <OptionalWrapper>(optional)</OptionalWrapper>
+                            移动到 <OptionalWrapper>(可选)</OptionalWrapper>
                         </Typography.Text>
                     }
                 >

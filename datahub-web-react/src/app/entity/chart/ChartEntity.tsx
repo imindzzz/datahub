@@ -156,10 +156,10 @@ export class ChartEntity implements Entity<Chart> {
                         enabled: (_, chart: GetChartQuery) => (chart?.chart?.dashboards?.total || 0) > 0,
                     },
                 },
-                {
-                    name: 'Properties',
-                    component: PropertiesTab,
-                },
+                // {
+                //     name: 'Properties',
+                //     component: PropertiesTab,
+                // },
                 {
                     name: 'Incidents',
                     component: IncidentTab,

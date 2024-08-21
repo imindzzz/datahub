@@ -81,10 +81,10 @@ export class ContainerEntity implements Entity<Container> {
                     name: 'Documentation',
                     component: DocumentationTab,
                 },
-                {
-                    name: 'Properties',
-                    component: PropertiesTab,
-                },
+                // {
+                //     name: 'Properties',
+                //     component: PropertiesTab,
+                // },
             ]}
             sidebarSections={this.getSidebarSections()}
         />

@@ -85,7 +85,7 @@ function MoveGlossaryEntityModal(props: Props) {
                 <Form.Item
                     label={
                         <Typography.Text strong>
-                            Move To <OptionalWrapper>(optional)</OptionalWrapper>
+                            移动到 <OptionalWrapper>(可选)</OptionalWrapper>
                         </Typography.Text>
                     }
                 >

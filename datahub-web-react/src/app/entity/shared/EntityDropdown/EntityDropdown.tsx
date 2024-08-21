@@ -218,7 +218,7 @@ function EntityDropdown(props: Props) {
                                 onClick={() => setIsMoveModalVisible(true)}
                             >
                                 <MenuItem>
-                                    <FolderOpenOutlined /> &nbsp;Move
+                                    <FolderOpenOutlined /> &nbsp;移动
                                 </MenuItem>
                             </StyledMenuItem>
                         )}
@@ -238,7 +238,7 @@ function EntityDropdown(props: Props) {
                                     }
                                 >
                                     <MenuItem data-testid="entity-menu-delete-button">
-                                        <DeleteOutlined /> &nbsp;Delete
+                                        <DeleteOutlined /> &nbsp;删除
                                     </MenuItem>
                                 </Tooltip>
                             </StyledMenuItem>

@@ -55,7 +55,7 @@ export default function SearchExtendedMenu({
                 <MenuItem key="1">
                     <SelectButton type="text" onClick={() => setShowSelectMode(true)}>
                         <FormOutlined />
-                        Edit...
+                        编辑
                     </SelectButton>
                 </MenuItem>
             )}

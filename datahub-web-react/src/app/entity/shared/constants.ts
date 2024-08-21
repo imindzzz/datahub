@@ -31,8 +31,8 @@ export const ANTD_GRAY_V2 = {
 
 export const EMPTY_MESSAGES = {
     documentation: {
-        title: 'No documentation yet',
-        description: 'Share your knowledge by adding documentation and links to helpful resources.',
+        title: '还没有文档',
+        description: '通过添加文档和有用资源的链接来积累知识。',
     },
     tags: {
         title: 'No tags added yet',

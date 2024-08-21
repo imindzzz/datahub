@@ -111,10 +111,10 @@ export class BusinessAttributeEntity implements Entity<BusinessAttribute> {
                         name: 'Related Entities',
                         component: BusinessAttributeRelatedEntity,
                     },
-                    {
-                        name: 'Properties',
-                        component: PropertiesTab,
-                    },
+                    // {
+                    //     name: 'Properties',
+                    //     component: PropertiesTab,
+                    // },
                 ]}
                 sidebarSections={[
                     {

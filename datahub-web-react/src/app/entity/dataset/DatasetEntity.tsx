@@ -38,7 +38,7 @@ import AccessManagement from '../shared/tabs/Dataset/AccessManagement/AccessMana
 import { matchedFieldPathsRenderer } from '../../search/matches/matchedFieldPathsRenderer';
 import { getLastUpdatedMs } from './shared/utils';
 import { IncidentTab } from '../shared/tabs/Incident/IncidentTab';
-import { GovernanceTab } from '../shared/tabs/Dataset/Governance/GovernanceTab';
+// import { GovernanceTab } from '../shared/tabs/Dataset/Governance/GovernanceTab';
 
 const SUBTYPES = {
     VIEW: 'view',
@@ -178,16 +178,16 @@ export class DatasetEntity implements Entity<Dataset> {
                 //         },
                 //     },
                 // },
-                {
-                    name: 'Governance',
-                    component: GovernanceTab,
-                    display: {
-                        visible: (_, _1) => true,
-                        enabled: (_, dataset: GetDatasetQuery) => {
-                            return dataset?.dataset?.testResults !== null;
-                        },
-                    },
-                },
+                // {
+                //     name: 'Governance',
+                //     component: GovernanceTab,
+                //     display: {
+                //         visible: (_, _1) => true,
+                //         enabled: (_, dataset: GetDatasetQuery) => {
+                //             return dataset?.dataset?.testResults !== null;
+                //         },
+                //     },
+                // },
                 {
                     name: 'Runs', // TODO: Rename this to DatasetRunsTab.
                     component: OperationsTab,

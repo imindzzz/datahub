@@ -105,10 +105,10 @@ export class GlossaryTermEntity implements Entity<GlossaryTerm> {
                         name: 'Related Terms',
                         component: GlossayRelatedTerms,
                     },
-                    {
-                        name: 'Properties',
-                        component: PropertiesTab,
-                    },
+                    // {
+                    //     name: 'Properties',
+                    //     component: PropertiesTab,
+                    // },
                 ]}
                 sidebarSections={this.getSidebarSections()}
                 getOverrideProperties={this.getOverridePropertiesFromEntity}

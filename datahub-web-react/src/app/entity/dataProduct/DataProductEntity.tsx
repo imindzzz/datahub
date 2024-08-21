@@ -84,10 +84,10 @@ export class DataProductEntity implements Entity<DataProduct> {
                     name: 'Assets',
                     component: DataProductEntitiesTab,
                 },
-                {
-                    name: 'Properties',
-                    component: PropertiesTab,
-                },
+                // {
+                //     name: 'Properties',
+                //     component: PropertiesTab,
+                // },
             ]}
             sidebarSections={this.getSidebarSections()}
         />

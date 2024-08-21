@@ -177,7 +177,11 @@ export const HomePageRecommendations = ({ user }: Props) => {
                     {domainRecommendationModule && (
                         <>
                             <DomainsRecomendationContainer id={HOME_PAGE_DOMAINS_ID}>
-                                <RecommendationTitle level={4}>{domainRecommendationModule.title}</RecommendationTitle>
+                                <RecommendationTitle level={4}>{
+                                    {
+                                        Domains: "域"
+                                    }[domainRecommendationModule.title] || domainRecommendationModule.title
+                                }</RecommendationTitle>
                                 <ThinDivider />
                                 <RecommendationModule
                                     module={domainRecommendationModule as RecommendationModuleType}
@@ -189,7 +193,7 @@ export const HomePageRecommendations = ({ user }: Props) => {
                     )}
                     {showExportYourData ? (
                         <>
-                            <RecommendationTitle level={4}>Explore your data</RecommendationTitle>
+                            <RecommendationTitle level={4}>探索你的数据</RecommendationTitle>
                             <ThinDivider />
                             {hasIngestedMetadata ? (
                                 <BrowseCardContainer>
@@ -238,7 +242,14 @@ export const HomePageRecommendations = ({ user }: Props) => {
                             .filter((module) => module.renderType !== RecommendationRenderType.DomainSearchList)
                             .map((module) => (
                                 <RecommendationContainer id={getStepId(module.moduleId)} key={module.moduleId}>
-                                    <RecommendationTitle level={4}>{module.title}</RecommendationTitle>
+                                    <RecommendationTitle level={4}>{
+                                        {
+                                            "Platforms": "平台",
+                                            "Recently Viewed": "最近查看",
+                                            "Recently Edited": "最近编辑",
+                                            "Most Popular": "最常用",
+                                        }[module.title] || module.title
+                                    }</RecommendationTitle>
                                     <ThinDivider />
                                     <RecommendationModule
                                         module={module as RecommendationModuleType}
