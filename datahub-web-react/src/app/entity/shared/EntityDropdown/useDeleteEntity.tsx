@@ -86,15 +86,17 @@ function useDeleteEntity(
 
     function onDeleteEntity() {
         Modal.confirm({
-            title: `Delete ${
-                (entityData && entityRegistry.getDisplayName(type, entityData)) || entityRegistry.getEntityName(type)
-            }`,
-            content: `Are you sure you want to remove this ${entityRegistry.getEntityName(type)}?`,
+            title: `删除 ${(entityData && entityRegistry.getDisplayName(type, entityData)) || entityRegistry.getEntityName(type)
+                }`,
+            content: `你确定要删除 ${{
+                'Domain': '域'
+            }[entityRegistry.getEntityName(type)!] || entityRegistry.getEntityName(type)}?`,
             onOk() {
                 handleDeleteEntity();
             },
-            onCancel() {},
-            okText: 'Yes',
+            onCancel() { },
+            okText: '是',
+            cancelText: '取消',
             maskClosable: true,
             closable: true,
         });

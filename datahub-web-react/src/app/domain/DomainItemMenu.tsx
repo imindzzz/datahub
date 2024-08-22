@@ -42,7 +42,7 @@ export default function DomainItemMenu({ name, urn, onDelete }: Props) {
                 deleteDomain();
             },
             onCancel() {},
-            okText: 'Yes',
+            okText: '是',
             maskClosable: true,
             closable: true,
         });

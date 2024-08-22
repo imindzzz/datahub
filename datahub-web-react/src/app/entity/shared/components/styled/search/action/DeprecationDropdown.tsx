@@ -63,7 +63,7 @@ export default function DeprecationDropdown({ urns, disabled = false, refetch }:
                                     batchUndeprecate();
                                 },
                                 onCancel() {},
-                                okText: 'Yes',
+                                okText: '是',
                                 maskClosable: true,
                                 closable: true,
                             });

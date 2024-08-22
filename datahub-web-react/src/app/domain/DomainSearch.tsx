@@ -86,7 +86,7 @@ function DomainSearch() {
             <ClickOutside onClickOutside={() => setIsSearchBarFocused(false)}>
                 <SearchBar
                     initialQuery={query || ''}
-                    placeholderText="Search Domains"
+                    placeholderText="搜索域"
                     suggestions={[]}
                     hideRecommendations
                     style={{

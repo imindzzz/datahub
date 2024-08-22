@@ -145,7 +145,7 @@ export default function GroupMembers({ urn, pageSize, isExternalGroup, onChangeM
                 removeGroupMember(memberUrn);
             },
             onCancel() {},
-            okText: 'Yes',
+            okText: '是',
             maskClosable: true,
             closable: true,
         });

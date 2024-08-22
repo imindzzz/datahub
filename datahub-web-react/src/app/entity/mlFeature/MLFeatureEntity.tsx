@@ -88,10 +88,10 @@ export class MLFeatureEntity implements Entity<MlFeature> {
                     name: 'Lineage',
                     component: LineageTab,
                 },
-                {
-                    name: 'Properties',
-                    component: PropertiesTab,
-                },
+                // {
+                //     name: 'Properties',
+                //     component: PropertiesTab,
+                // },
             ]}
             sidebarSections={this.getSidebarSections()}
         />

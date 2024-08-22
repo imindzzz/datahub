@@ -69,13 +69,13 @@ export default function EmbeddedListSearchHeader({
                 <HeaderContainer>
                     <Button type="text" onClick={onToggleFilters}>
                         <FilterOutlined />
-                        <Typography.Text>Filters</Typography.Text>
+                        <Typography.Text>过滤</Typography.Text>
                     </Button>
                     <SearchAndDownloadContainer>
                         <SearchBar
                             data-testid="embedded-search-bar"
                             initialQuery=""
-                            placeholderText={placeholderText || 'Search entities...'}
+                            placeholderText={placeholderText || '搜索实体'}
                             suggestions={[]}
                             style={
                                 searchBarStyle || {

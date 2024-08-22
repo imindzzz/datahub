@@ -72,7 +72,7 @@ export const DatasetAssertionsList = ({ assertions, onDelete }: Props) => {
                 deleteAssertion(urn);
             },
             onCancel() {},
-            okText: 'Yes',
+            okText: '是',
             maskClosable: true,
             closable: true,
         });

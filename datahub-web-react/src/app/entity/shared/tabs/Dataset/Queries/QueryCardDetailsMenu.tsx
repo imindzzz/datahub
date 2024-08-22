@@ -46,7 +46,7 @@ export default function QueryCardDetailsMenu({ urn, onDeleted, index }: Props) {
                 deleteQuery();
             },
             onCancel() {},
-            okText: 'Yes',
+            okText: '是',
             maskClosable: true,
             closable: true,
         });

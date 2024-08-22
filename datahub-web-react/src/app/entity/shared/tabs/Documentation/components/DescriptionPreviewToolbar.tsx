@@ -11,7 +11,7 @@ export const DescriptionPreviewToolbar = ({ onEdit }: DescriptionPreviewToolbarP
     return (
         <TabToolbar>
             <Button type="text" onClick={onEdit}>
-                <EditOutlined /> Edit
+                <EditOutlined /> 编辑
             </Button>
         </TabToolbar>
     );

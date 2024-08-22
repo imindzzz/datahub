@@ -84,7 +84,7 @@ export const ExpandedOwner = ({ entityUrn, owner, hidePopOver, refetch, readOnly
                 onDelete();
             },
             onCancel() {},
-            okText: 'Yes',
+            okText: '是',
             maskClosable: true,
             closable: true,
         });

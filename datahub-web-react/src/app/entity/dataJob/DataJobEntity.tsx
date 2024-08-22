@@ -85,10 +85,10 @@ export class DataJobEntity implements Entity<DataJob> {
                     name: 'Documentation',
                     component: DocumentationTab,
                 },
-                {
-                    name: 'Properties',
-                    component: PropertiesTab,
-                },
+                // {
+                //     name: 'Properties',
+                //     component: PropertiesTab,
+                // },
                 {
                     name: 'Pipeline',
                     component: DataJobFlowTab,

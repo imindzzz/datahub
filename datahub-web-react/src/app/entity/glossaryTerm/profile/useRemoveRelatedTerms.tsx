@@ -48,7 +48,7 @@ function useRemoveRelatedTerms(termUrn: string, relationshipType: TermRelationsh
                 handleRemoveRelatedTerms();
             },
             onCancel() {},
-            okText: 'Yes',
+            okText: '是',
             maskClosable: true,
             closable: true,
         });

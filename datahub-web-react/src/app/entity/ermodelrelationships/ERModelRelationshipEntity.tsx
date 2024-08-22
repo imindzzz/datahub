@@ -71,10 +71,10 @@ export class ERModelRelationshipEntity implements Entity<ErModelRelationship> {
                     name: 'Documentation',
                     component: DocumentationTab,
                 },
-                {
-                    name: 'Properties',
-                    component: PropertiesTab,
-                },
+                // {
+                //     name: 'Properties',
+                //     component: PropertiesTab,
+                // },
             ]}
             sidebarSections={[
                 {

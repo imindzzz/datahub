@@ -116,10 +116,10 @@ export class MLModelEntity implements Entity<MlModel> {
                     name: 'Features',
                     component: MlModelFeaturesTab,
                 },
-                {
-                    name: 'Properties',
-                    component: PropertiesTab,
-                },
+                // {
+                //     name: 'Properties',
+                //     component: PropertiesTab,
+                // },
             ]}
             sidebarSections={this.getSidebarSections()}
         />

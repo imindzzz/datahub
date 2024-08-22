@@ -72,10 +72,10 @@ class GlossaryNodeEntity implements Entity<GlossaryNode> {
                             hideLinksButton: true,
                         },
                     },
-                    {
-                        name: 'Properties',
-                        component: PropertiesTab,
-                    },
+                    // {
+                    //     name: 'Properties',
+                    //     component: PropertiesTab,
+                    // },
                 ]}
                 sidebarSections={this.getSidebarSections()}
                 headerDropdownItems={

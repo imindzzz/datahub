@@ -65,7 +65,7 @@ export default function DataProductsDropdown({ urns, disabled = false, refetch }
                                     batchUnsetDataProducts();
                                 },
                                 onCancel() {},
-                                okText: 'Yes',
+                                okText: '是',
                                 maskClosable: true,
                                 closable: true,
                             });

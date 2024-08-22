@@ -32,7 +32,7 @@ export const SidebarAboutSection = ({ properties, readOnly }: Props) => {
     return (
         <div>
             <SidebarHeader
-                title="About"
+                title="关于"
                 actions={
                     hasContent &&
                     !readOnly && (

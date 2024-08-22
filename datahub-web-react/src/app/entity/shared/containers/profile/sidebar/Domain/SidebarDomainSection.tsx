@@ -58,13 +58,14 @@ export const SidebarDomainSection = ({ readOnly, properties }: Props) => {
 
     const onRemoveDomain = (urnToRemoveFrom) => {
         Modal.confirm({
-            title: `Confirm Domain Removal`,
-            content: `Are you sure you want to remove this domain?`,
+            title: `确认删除域`,
+            content: `你确定要删除这个域吗?`,
             onOk() {
                 removeDomain(urnToRemoveFrom);
             },
             onCancel() {},
-            okText: 'Yes',
+            okText: '是',
+            cancelText:"取消",
             maskClosable: true,
             closable: true,
         });

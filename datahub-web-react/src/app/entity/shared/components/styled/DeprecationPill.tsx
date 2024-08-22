@@ -223,7 +223,7 @@ export const DeprecationPill = ({ deprecation, urn, refetch, showUndeprecate }: 
                                             batchUndeprecate();
                                         },
                                         onCancel() {},
-                                        okText: 'Yes',
+                                        okText: '是',
                                         maskClosable: true,
                                         closable: true,
                                     })

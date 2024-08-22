@@ -50,7 +50,12 @@ export const EntityTabs = <T,>({ tabs, selectedTab }: Props) => {
                 if (!tab.display?.enabled(entityData, baseEntity)) {
                     return <Tab tab={tabName} key={tab.name} disabled />;
                 }
-                return <Tab tab={tabName} key={tab.name} />;
+                return <Tab tab={
+                    {
+                    'Entities': '实体',
+                    'Documentation': '文档',
+                    }[tabName] || tabName
+                } key={tab.name} />;
             })}
         </UnborderedTabs>
     );

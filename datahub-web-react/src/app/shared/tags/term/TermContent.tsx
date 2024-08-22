@@ -80,7 +80,7 @@ export default function TermContent({
                 }
             },
             onCancel() {},
-            okText: 'Yes',
+            okText: '是',
             maskClosable: true,
             closable: true,
         });

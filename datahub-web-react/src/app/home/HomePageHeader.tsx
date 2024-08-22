@@ -238,7 +238,8 @@ export const HomePageHeader = () => {
                 <WelcomeText>
                     {!!user && (
                         <>
-                            Welcome back, <b>{entityRegistry.getDisplayName(EntityType.CorpUser, user)}</b>.
+                            欢迎回来
+                            {/* , <b>{entityRegistry.getDisplayName(EntityType.CorpUser, user)}</b>. */}
                         </>
                     )}
                 </WelcomeText>
@@ -283,9 +284,9 @@ export const HomePageHeader = () => {
                     {searchResultsToShow && searchResultsToShow.length > 0 && (
                         <SuggestionsContainer>
                             <SuggestionsHeader>
-                                <SuggestedQueriesText strong>Try searching for</SuggestedQueriesText>
+                                <SuggestedQueriesText strong>尝试以下搜索</SuggestedQueriesText>
                                 <ExploreAllButton type="link" onClick={onClickExploreAll}>
-                                    Explore all <StyledRightOutlined />
+                                    探索全部 <StyledRightOutlined />
                                 </ExploreAllButton>
                             </SuggestionsHeader>
                             <SuggestionTagContainer>

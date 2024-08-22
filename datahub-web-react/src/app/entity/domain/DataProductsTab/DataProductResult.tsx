@@ -82,7 +82,7 @@ export default function DataProductResult({ dataProduct, onUpdateDataProduct, se
                 deleteDataProduct();
             },
             onCancel() {},
-            okText: 'Yes',
+            okText: '是',
             maskClosable: true,
             closable: true,
         });

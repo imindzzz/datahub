@@ -80,7 +80,7 @@ export default function DomainParentSelect({ selectedParentUrn, setSelectedParen
                 showSearch
                 allowClear
                 clearIcon={<CloseCircleFilled onClick={handleClear} />}
-                placeholder="Select"
+                placeholder="选择域"
                 filterOption={false}
                 value={selectedParentName}
                 onSelect={onSelectParent}

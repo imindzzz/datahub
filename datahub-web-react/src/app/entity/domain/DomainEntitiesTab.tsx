@@ -23,7 +23,7 @@ export const DomainEntitiesTab = () => {
                 filters: [fixedFilter],
             }}
             emptySearchQuery="*"
-            placeholderText="Filter domain entities..."
+            placeholderText="过滤域实体"
             skipCache
             applyView
         />

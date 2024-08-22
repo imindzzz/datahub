@@ -156,23 +156,23 @@ function EntityActions(props: Props) {
             <div style={{ marginRight: 12 }}>
                 {actionItems.has(EntityActionItem.BATCH_ADD_GLOSSARY_TERM) && (
                     <Button onClick={() => setIsBatchAddGlossaryTermModalVisible(true)}>
-                        <LinkOutlined /> Add to assets
+                        <LinkOutlined /> 添加到资产
                     </Button>
                 )}
                 {actionItems.has(EntityActionItem.BATCH_ADD_DOMAIN) && (
                     <Button onClick={() => setIsBatchSetDomainModalVisible(true)}>
-                        <LinkOutlined /> Add assets
+                        <LinkOutlined /> 添加资产
                     </Button>
                 )}
                 {actionItems.has(EntityActionItem.BATCH_ADD_DATA_PRODUCT) && (
                     <Button onClick={() => setIsBatchSetDataProductModalVisible(true)}>
-                        <LinkOutlined /> Add assets
+                        <LinkOutlined /> 添加资产
                     </Button>
                 )}
             </div>
             {isBatchAddGlossaryTermModalVisible && (
                 <SearchSelectModal
-                    titleText="Add Glossary Term to assets"
+                    titleText="添加术语到资产"
                     continueText="Add"
                     onContinue={batchAddGlossaryTerms}
                     onCancel={() => setIsBatchAddGlossaryTermModalVisible(false)}
@@ -183,7 +183,7 @@ function EntityActions(props: Props) {
             )}
             {isBatchSetDomainModalVisible && (
                 <SearchSelectModal
-                    titleText="Add assets to Domain"
+                    titleText="添加资产到域"
                     continueText="Add"
                     onContinue={batchSetDomain}
                     onCancel={() => setIsBatchSetDomainModalVisible(false)}
@@ -194,7 +194,7 @@ function EntityActions(props: Props) {
             )}
             {isBatchSetDataProductModalVisible && (
                 <SearchSelectModal
-                    titleText="Add assets to Data Product"
+                    titleText="添加资产到数据产品"
                     continueText="Add"
                     onContinue={batchSetDataProduct}
                     onCancel={() => setIsBatchSetDataProductModalVisible(false)}

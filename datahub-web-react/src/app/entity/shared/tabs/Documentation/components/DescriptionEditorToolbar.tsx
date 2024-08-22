@@ -13,10 +13,10 @@ export const DescriptionEditorToolbar = ({ disableSave, onClose, onSave }: Descr
     return (
         <TabToolbar>
             <Button type="text" onClick={onClose}>
-                Back
+                返回
             </Button>
             <Button data-testid="description-editor-save-button" onClick={onSave} disabled={disableSave}>
-                <CheckOutlined /> Save
+                <CheckOutlined /> 保存
             </Button>
         </TabToolbar>
     );
