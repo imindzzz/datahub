@@ -128,7 +128,7 @@ export const SettingsPage = () => {
             <SettingsBarContainer>
                 <SettingsBarHeader>
                     <PageTitle level={3}>Settings</PageTitle>
-                    <Typography.Paragraph type="secondary">Manage your DataHub settings.</Typography.Paragraph>
+                    <Typography.Paragraph type="secondary">管理你的 DataHub 设置</Typography.Paragraph>
                 </SettingsBarHeader>
                 <ThinDivider />
                 <Menu
@@ -140,59 +140,59 @@ export const SettingsPage = () => {
                         history.replace(`${url}/${newPath.key}`);
                     }}
                 >
-                    <Menu.ItemGroup title="Developer">
+                    <Menu.ItemGroup title="开发者">
                         <Menu.Item key="tokens">
                             <SafetyCertificateOutlined />
-                            <ItemTitle>Access Tokens</ItemTitle>
+                            <ItemTitle>令牌</ItemTitle>
                         </Menu.Item>
                     </Menu.ItemGroup>
                     {(showPolicies || showUsersGroups) && (
-                        <Menu.ItemGroup title="Access">
+                        <Menu.ItemGroup title="访问权">
                             {showUsersGroups && (
                                 <Menu.Item key="identities">
                                     <UsergroupAddOutlined />
-                                    <ItemTitle>Users & Groups</ItemTitle>
+                                    <ItemTitle>用户和分组</ItemTitle>
                                 </Menu.Item>
                             )}
                             {showPolicies && (
                                 <Menu.Item key="permissions">
                                     <BankOutlined />
-                                    <ItemTitle>Permissions</ItemTitle>
+                                    <ItemTitle>权限</ItemTitle>
                                 </Menu.Item>
                             )}
                         </Menu.ItemGroup>
                     )}
                     {(showViews || showOwnershipTypes || showHomePagePosts) && (
-                        <Menu.ItemGroup title="Manage">
+                        <Menu.ItemGroup title="管理">
                             {showFeatures && (
                                 <MenuItem key="features">
                                     <ControlOutlined />
-                                    <ItemTitle>Features</ItemTitle>
+                                    <ItemTitle>新功能</ItemTitle>
                                     <NewTag>New!</NewTag>
                                 </MenuItem>
                             )}
                             {showViews && (
                                 <Menu.Item key="views">
-                                    <FilterOutlined /> <ItemTitle>My Views</ItemTitle>
+                                    <FilterOutlined /> <ItemTitle>视图管理</ItemTitle>
                                 </Menu.Item>
                             )}
                             {showOwnershipTypes && (
                                 <Menu.Item key="ownership">
-                                    <TeamOutlined /> <ItemTitle>Ownership Types</ItemTitle>
+                                    <TeamOutlined /> <ItemTitle>所有权类型</ItemTitle>
                                 </Menu.Item>
                             )}
                             {showHomePagePosts && (
                                 <Menu.Item key="posts">
-                                    <PushpinOutlined /> <ItemTitle>Home Page Posts</ItemTitle>
+                                    <PushpinOutlined /> <ItemTitle>首页文章</ItemTitle>
                                 </Menu.Item>
                             )}
                         </Menu.ItemGroup>
                     )}
 
-                    <Menu.ItemGroup title="Preferences">
+                    <Menu.ItemGroup title="偏好">
                         <Menu.Item key="preferences">
                             <ToolOutlined />
-                            <ItemTitle>Appearance</ItemTitle>
+                            <ItemTitle>外观</ItemTitle>
                         </Menu.Item>
                     </Menu.ItemGroup>
                 </Menu>

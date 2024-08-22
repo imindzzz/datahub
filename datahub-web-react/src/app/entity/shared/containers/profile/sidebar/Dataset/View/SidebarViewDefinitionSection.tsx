@@ -39,9 +39,9 @@ export const SidebarViewDefinitionSection = () => {
     return (
         <div>
             <HeaderContainer>
-                <SidebarHeader title="View Definition" />
+                <SidebarHeader title="视图定义" />
                 <StatsButton onClick={() => routeToTab({ tabName: 'View Definition' })} type="link">
-                    See View Definition &gt;
+                    查看视图定义 &gt;
                 </StatsButton>
             </HeaderContainer>
             <InfoRow>

@@ -77,11 +77,11 @@ export const ManageAccount = ({ urn: _urn, pictureLink: _pictureLink, name }: Pr
                     rel="noopener noreferrer"
                     tabIndex={0}
                 >
-                    Your Profile
+                    个人信息
                 </a>
             </MenuItem>
             <Menu.Divider />
-            {themeConfig.content.menu.items.map((value) => {
+            {/* {themeConfig.content.menu.items.map((value) => {
                 return (
                     <MenuItem key={value.label}>
                         <a
@@ -94,17 +94,17 @@ export const ManageAccount = ({ urn: _urn, pictureLink: _pictureLink, name }: Pr
                         </a>
                     </MenuItem>
                 );
-            })}
-            <MenuItem key="graphiQLLink">
+            })} */}
+            {/* <MenuItem key="graphiQLLink">
                 <a href="/api/graphiql">GraphiQL</a>
             </MenuItem>
             <MenuItem key="openapiLink">
                 <a href="/openapi/swagger-ui/index.html">OpenAPI</a>
             </MenuItem>
-            <Menu.Divider />
+            <Menu.Divider /> */}
             <MenuItem danger key="logout" tabIndex={0}>
                 <a href="/logOut" onClick={handleLogout} data-testid="log-out-menu-item">
-                    Sign Out
+                    退出登录
                 </a>
             </MenuItem>
         </Menu>
