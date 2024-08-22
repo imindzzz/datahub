@@ -88,7 +88,7 @@ export default function DataProductSection({ readOnly }: Props) {
                     </EmptyText>
                     {!readOnly && (
                         <Button type="default" onClick={() => setIsModalVisible(true)}>
-                            <EditOutlined /> Set Data Product
+                            <EditOutlined /> 设置数据产品
                         </Button>
                     )}
                 </>

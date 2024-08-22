@@ -18,6 +18,7 @@ import {
     DataProduct,
     Health,
     Entity,
+    DatasetEditableProperties,
 } from '../../types.generated';
 import TagTermGroup from '../shared/tags/TagTermGroup';
 import { ANTD_GRAY } from '../entity/shared/constants';
@@ -67,7 +68,7 @@ const EntityTitleContainer = styled.div`
     align-items: center;
 `;
 
-const EntityTitle = styled(Typography.Text)<{ $titleSizePx?: number }>`
+const EntityTitle = styled(Typography.Text) <{ $titleSizePx?: number }>`
     display: block;
     &&&:hover {
         text-decoration: underline;
@@ -163,6 +164,7 @@ interface Props {
     logoComponent?: JSX.Element;
     url: string;
     description?: string;
+    editableProperties?: Maybe<DatasetEditableProperties>
     type?: string;
     typeIcon?: JSX.Element;
     platform?: string;
@@ -205,6 +207,7 @@ export default function DefaultPreviewCard({
     logoComponent,
     url,
     description,
+    editableProperties,
     type,
     typeIcon,
     platform,
@@ -313,9 +316,8 @@ export default function DefaultPreviewCard({
                     </EntityTitleContainer>
                     {degree !== undefined && degree !== null && (
                         <Tooltip
-                            title={`This entity is a ${getNumberWithOrdinal(degree)} degree connection to ${
-                                entityData?.name || 'the source entity'
-                            }`}
+                            title={`This entity is a ${getNumberWithOrdinal(degree)} degree connection to ${entityData?.name || 'the source entity'
+                                }`}
                         >
                             <PlatformText>{getNumberWithOrdinal(degree)}</PlatformText>
                         </Tooltip>
@@ -345,6 +347,8 @@ export default function DefaultPreviewCard({
                         >
                             {description}
                         </NoMarkdownViewer>
+                        {editableProperties?.assetName ? <div>资产名：{editableProperties?.assetName || ''}</div> : undefined}
+                        {editableProperties?.assetVersion ? <div>资产版本：{editableProperties?.assetVersion || ''}</div> : undefined}
                     </DescriptionContainer>
                 )}
                 {(dataProduct || domain || hasGlossaryTerms || hasTags) && (

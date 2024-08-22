@@ -200,7 +200,7 @@ export default function SchemaHeader({
                 ),
         );
     };
-    const schemaAuditToggleText = showSchemaAuditView ? 'Close column history' : 'View column history';
+    const schemaAuditToggleText = showSchemaAuditView ? '隐藏历史记录' : '显示历史记录';
 
     const debouncedSetFilterText = debounce(
         (e: React.ChangeEvent<HTMLInputElement>) => setFilterText(e.target.value),
@@ -248,7 +248,7 @@ export default function SchemaHeader({
                     {!showRaw && (
                         <StyledInput
                             defaultValue={schemaFilter}
-                            placeholder="Search in schema..."
+                            placeholder="搜索模式..."
                             onChange={debouncedSetFilterText}
                             allowClear
                             prefix={<SearchOutlined />}

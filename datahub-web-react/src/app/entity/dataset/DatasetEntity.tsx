@@ -314,6 +314,7 @@ export class DatasetEntity implements Entity<Dataset> {
         );
     };
 
+    // 搜索结果
     renderSearch = (result: SearchResult) => {
         const data = result.entity as Dataset;
         const genericProperties = this.getGenericEntityProperties(data);
@@ -338,6 +339,7 @@ export class DatasetEntity implements Entity<Dataset> {
                 domain={data.domain?.domain}
                 dataProduct={getDataProduct(genericProperties?.dataProduct)}
                 deprecation={data.deprecation}
+                editableProperties={data.editableProperties}
                 glossaryTerms={data.glossaryTerms}
                 subtype={data.subTypes?.typeNames?.[0]}
                 container={data.container}
