@@ -264,7 +264,7 @@ export default function SchemaHeader({
                         }}
                         icon={<UploadOutlined />}
                     >
-                        Import Schema
+                        导入模式
                     </Button>
                     <ImportSchemaModal
                         open={importSchemaModalOpen}

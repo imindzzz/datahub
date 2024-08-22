@@ -7,23 +7,23 @@ import { OwnershipType, OwnershipTypeEntity } from '../../../../../../../types.g
 export const OWNERSHIP_DISPLAY_TYPES = [
     {
         type: OwnershipType.TechnicalOwner,
-        name: 'Technical Owner',
-        description: 'Involved in the production, maintenance, or distribution of the asset(s).',
+        name: '技术负责人',
+        description: '参与资产的生产、维护或分配的。',
     },
     {
         type: OwnershipType.BusinessOwner,
-        name: 'Business Owner',
-        description: 'Principle stakeholders or domain experts associated with the asset(s).',
+        name: '业务负责制',
+        description: '与资产相关的主要涉众或领域专家。',
     },
     {
         type: OwnershipType.DataSteward,
-        name: 'Data Steward',
-        description: 'Involved in governance of the asset(s).',
+        name: '数据管家',
+        description: '参与资产的治理。',
     },
     {
         type: OwnershipType.None,
-        name: 'None',
-        description: 'No ownership type specified.',
+        name: '无',
+        description: '没有指定所有权类型。',
     },
 ];
 

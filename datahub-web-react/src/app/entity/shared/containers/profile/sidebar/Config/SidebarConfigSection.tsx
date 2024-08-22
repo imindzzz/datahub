@@ -32,31 +32,31 @@ export const SidebarConfigSection = ({ properties, readOnly }: Props) => {
     const refetch = useRefetch();
     return (
         <AddConfigWrapper id={ENTITY_PROFILE_OWNERS_ID}>
-            <SidebarHeader title="Config" />
+            <SidebarHeader title="资产配置" />
             {hasConfig && (
                 <ConfigWrapper>
                     <div className="item">
-                        <div className="key">Asset Name</div>
+                        <div className="key">资产名</div>
                         <div className="value">{entityData?.editableProperties?.assetName}</div>
                     </div>
                     <div className="item">
-                        <div className="key">Asset Description</div>
+                        <div className="key">资产描述</div>
                         <div className="value">{entityData?.editableProperties?.assetDescription}</div>
                     </div>
                     <div className="item">
-                        <div className="key">Asset Position</div>
+                        <div className="key">资产位置</div>
                         <div className="value">{entityData?.editableProperties?.assetPosition}</div>
                     </div>
                     <div className="item">
-                        <div className="key">Asset Version</div>
+                        <div className="key">资产版本</div>
                         <div className="value">{entityData?.editableProperties?.assetVersion}</div>
                     </div>
                     <div className="item">
-                        <div className="key">Asset Version Description</div>
+                        <div className="key">资产版本描述</div>
                         <div className="value">{entityData?.editableProperties?.assetVersionDescription}</div>
                     </div>
                     <div className="item">
-                        <div className="key">Asset Remark</div>
+                        <div className="key">资产备注</div>
                         <div className="value">{entityData?.editableProperties?.assetRemark}</div>
                     </div>
                     

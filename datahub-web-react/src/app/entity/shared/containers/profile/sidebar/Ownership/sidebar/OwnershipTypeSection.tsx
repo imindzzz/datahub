@@ -4,7 +4,7 @@ import { Typography } from 'antd';
 import { Owner, OwnershipTypeEntity } from '../../../../../../../../types.generated';
 import { ExpandedOwner } from '../../../../../components/styled/ExpandedOwner/ExpandedOwner';
 import { useMutationUrn, useRefetch } from '../../../../../EntityContext';
-import { getOwnershipTypeName } from '../ownershipUtils';
+import { getOwnershipTypeName, OWNERSHIP_DISPLAY_TYPES } from '../ownershipUtils';
 
 const OwnershipTypeContainer = styled.div`
     display: flex;
@@ -39,7 +39,7 @@ export const OwnershipTypeSection = ({ ownershipType, owners, readOnly }: Props)
     const ownershipTypeName = getOwnershipTypeName(ownershipType);
     return (
         <OwnershipTypeContainer>
-            <OwnershipTypeNameText>{ownershipTypeName}</OwnershipTypeNameText>
+            {/* <OwnershipTypeNameText>{ownershipTypeName}</OwnershipTypeNameText> */}
             <OwnersContainer>
                 {owners.map((owner) => (
                     <ExpandedOwner

@@ -130,19 +130,19 @@ function LastIngested({ lastIngested }: Props) {
                     <PopoverContentWrapper>
                         <Title>
                             <StyledDot color={lastIngestedColor} />
-                            Last Synchronized
+                            最后同步于
                         </Title>
                         <RelativeDescription>
-                            This {displayedEntityType.toLocaleLowerCase()} was last synchronized&nbsp;
+                             {displayedEntityType.toLocaleLowerCase()} 最后同步&nbsp;
                             <b>{toRelativeTimeString(lastIngested)}</b>
                         </RelativeDescription>
-                        <SubText>Synchronized on {toLocalDateTimeString(lastIngested)}</SubText>
+                        <SubText>同步于 {toLocalDateTimeString(lastIngested)}</SubText>
                     </PopoverContentWrapper>
                 }
             >
                 <MainContent>
                     <StyledDot color={lastIngestedColor} />
-                    Last synchronized&nbsp;
+                    最后同步于 &nbsp;
                     <b>{toRelativeTimeString(lastIngested)}</b>
                 </MainContent>
             </Popover>

@@ -74,7 +74,7 @@ export const SidebarDomainSection = ({ readOnly, properties }: Props) => {
     return (
         <div>
             <div id={ENTITY_PROFILE_DOMAINS_ID} className="sidebar-domain-section">
-                <SidebarHeader title="Domain" />
+                <SidebarHeader title="域" />
                 <ContentWrapper displayInline={!!domain}>
                     {domain && (
                         <DomainLink

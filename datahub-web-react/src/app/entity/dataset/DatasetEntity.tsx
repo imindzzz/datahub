@@ -105,11 +105,11 @@ export class DatasetEntity implements Entity<Dataset> {
             }}
             tabs={[
                 {
-                    name: 'Schema',
+                    name: '模式',
                     component: SchemaTab,
                 },
                 {
-                    name: 'Relationships',
+                    name: '表关系',
                     component: RelationshipsTab,
                     display: {
                         visible: (_, _1) => false,
@@ -117,7 +117,7 @@ export class DatasetEntity implements Entity<Dataset> {
                     },
                 },
                 {
-                    name: 'View Definition',
+                    name: '定义',
                     component: ViewDefinitionTab,
                     display: {
                         visible: (_, dataset: GetDatasetQuery) =>
@@ -129,11 +129,11 @@ export class DatasetEntity implements Entity<Dataset> {
                     },
                 },
                 {
-                    name: 'Documentation',
+                    name: '文档',
                     component: DocumentationTab,
                 },
                 {
-                    name: 'Preview',
+                    name: '预览',
                     component: EmbedTab,
                     display: {
                         visible: (_, dataset: GetDatasetQuery) => !!dataset?.dataset?.embed?.renderUrl,
@@ -193,7 +193,7 @@ export class DatasetEntity implements Entity<Dataset> {
                     },
                 },
                 {
-                    name: 'Access Management',
+                    name: '访问管理',
                     component: AccessManagement,
                     display: {
                         visible: (_, _1) => this.appconfig().config.featureFlags.showAccessManagement,
@@ -205,15 +205,15 @@ export class DatasetEntity implements Entity<Dataset> {
                     },
                 },
                 {
-                    name: 'Incidents',
+                    name: '事件',
                     component: IncidentTab,
                     getDynamicName: (_, dataset) => {
                         const activeIncidentCount = dataset?.dataset?.activeIncidents.total;
-                        return `Incidents${(activeIncidentCount && ` (${activeIncidentCount})`) || ''}`;
+                        return `事件${(activeIncidentCount && ` (${activeIncidentCount})`) || ''}`;
                     },
                 },
                 {
-                    name: 'Excel Preview',
+                    name: '数据预览',
                     component: ExcelPreviewTab,
                 },
             ]}

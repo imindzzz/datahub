@@ -128,7 +128,7 @@ export default function SchemaTable({
 
     const fieldColumn = {
         width: '22%',
-        title: 'Field',
+        title: '字段',
         dataIndex: 'fieldPath',
         key: 'fieldPath',
         render: schemaTitleRenderer,
@@ -140,41 +140,41 @@ export default function SchemaTable({
 
     const descriptionColumn = {
         width: '22%',
-        title: 'Description',
+        title: '描述',
         dataIndex: 'description',
         key: 'description',
         render: descriptionRender,
     };
     const businessDescriptionColumn = {
         width: '22%',
-        title: 'Business Description',
+        title: '业务描述',
         dataIndex: 'businessDescription',
         key: 'businessDescription',
         render: businessDescriptionRender,
     };
-    const businessRelationColumn = {
-        width: '22%',
-        title: 'Business Relation',
-        dataIndex: 'businessRelation',
-        key: 'businessRelation',
-        render: businessRelationRender,
-    };
+    // const businessRelationColumn = {
+    //     width: '22%',
+    //     title: 'Business Relation',
+    //     dataIndex: 'businessRelation',
+    //     key: 'businessRelation',
+    //     render: businessRelationRender,
+    // };
 
     const tagColumn = {
         width: '13%',
-        title: 'Tags',
+        title: '标签',
         dataIndex: 'globalTags',
         key: 'tag',
         render: tagRenderer,
     };
 
-    const termColumn = {
-        width: '13%',
-        title: 'Glossary Terms',
-        dataIndex: 'globalTags',
-        key: 'tag',
-        render: termRenderer,
-    };
+    // const termColumn = {
+    //     width: '13%',
+    //     title: 'Glossary Terms',
+    //     dataIndex: 'globalTags',
+    //     key: 'tag',
+    //     render: termRenderer,
+    // };
 
     const blameColumn = {
         width: '10%',
@@ -221,9 +221,9 @@ export default function SchemaTable({
         fieldColumn,
         descriptionColumn,
         businessDescriptionColumn,
-        businessRelationColumn,
+        // businessRelationColumn,
         tagColumn,
-        termColumn,
+        // termColumn,
     ];
 
     if (hasProperties) {

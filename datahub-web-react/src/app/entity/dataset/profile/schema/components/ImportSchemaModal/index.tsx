@@ -148,7 +148,7 @@ export default function ImportSchemaModal(props: ImportSchemaModalProps) {
         },
     };
     return (
-        <Modal open={open} onCancel={onClose} title="Import Schema" footer={false}>
+        <Modal open={open} onCancel={onClose} title="导入模式" footer={false}>
             <div
                 style={{
                     display: 'flex',
@@ -158,7 +158,7 @@ export default function ImportSchemaModal(props: ImportSchemaModalProps) {
             >
                 <Upload {...uploadProps}>
                     <Button type="primary" icon={<UploadOutlined />} loading={!!loading}>
-                        Upload Excel {loading ? `${loading.done} / ${loading.total}` : null}
+                        上传 Excel {loading ? `${loading.done} / ${loading.total}` : null}
                     </Button>
                 </Upload>
             </div>
