@@ -42,7 +42,7 @@ export const ViewSelectHeader = ({ onClickClear }: Props) => {
                 ref={clearButtonRef}
                 onClick={onHandleClickClear}
             >
-                View all
+                查看所有
             </AllEntitiesButton>
         </ButtonContainer>
     );

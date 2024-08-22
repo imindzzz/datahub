@@ -58,10 +58,10 @@ export const ViewSelectFooter = ({ hasViews, onClickCreateView, onClickManageVie
                 onClick={onClickCreateView}
             >
                 <PlusOutlined />
-                <Typography.Text>Create new view</Typography.Text>
+                <Typography.Text>创建新视图</Typography.Text>
             </CreateViewButton>
             <ManageViewsButton type="text" ref={manageViewsButtonRef} onClick={onHandleClickManageViews}>
-                Manage Views
+                管理视图
             </ManageViewsButton>
         </ButtonContainer>
     );
