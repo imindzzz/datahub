@@ -32,6 +32,7 @@ export const PlatformContentWrapper = styled.div`
     margin: 0 8px 6px 0;
     flex-wrap: nowrap;
     flex: 1;
+    pointer-events:none; // 不可点击
 `;
 
 export const PlatformText = styled(Typography.Text)`

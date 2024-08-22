@@ -330,6 +330,12 @@ fragment nonSiblingsDatasetSearchFields on Dataset {
     }
     editableProperties {
         description
+        assetName
+        assetDescription
+        assetPosition
+        assetVersion
+        assetVersionDescription
+        assetRemark
     }
     access {
         ...getAccess

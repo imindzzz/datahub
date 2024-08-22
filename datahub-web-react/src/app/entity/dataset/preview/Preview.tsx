@@ -15,6 +15,7 @@ import {
     DataProduct,
     Health,
     EntityPath,
+    DatasetEditableProperties,
 } from '../../../../types.generated';
 import DefaultPreviewCard from '../../../preview/DefaultPreviewCard';
 import { useEntityRegistry } from '../../../useEntityRegistry';
@@ -37,6 +38,7 @@ export const Preview = ({
     domain,
     dataProduct,
     deprecation,
+    editableProperties,
     snippet,
     insights,
     glossaryTerms,
@@ -66,6 +68,7 @@ export const Preview = ({
     domain?: Domain | null;
     dataProduct?: DataProduct | null;
     deprecation?: Deprecation | null;
+    editableProperties?: Maybe<DatasetEditableProperties> | null;
     globalTags?: GlobalTags | null;
     snippet?: React.ReactNode | null;
     insights?: Array<SearchInsight> | null;
@@ -90,6 +93,7 @@ export const Preview = ({
             name={name || ''}
             urn={urn}
             description={description || ''}
+            editableProperties={editableProperties}
             type={capitalizeFirstLetterOnly(subtype) || 'Dataset'}
             logoUrl={platformLogo || ''}
             typeIcon={entityRegistry.getIcon(EntityType.Dataset, 12, IconStyleType.ACCENT)}
