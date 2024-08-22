@@ -119,7 +119,7 @@ export const AddConfigModal = ({ buttonProps, refetch }: AddLinkProps) => {
                         onClick={showModal}
                         {...buttonProps}
                     >
-                        Edit Config
+                        编辑配置
                     </Button>
                     <Button
                         data-testid="remove-config-button"
@@ -127,7 +127,7 @@ export const AddConfigModal = ({ buttonProps, refetch }: AddLinkProps) => {
                         onClick={handleRemove}
                         {...buttonProps}
                     >
-                        Remove Config
+                        移除配置
                     </Button>
                 </Space>
             ) : (
@@ -137,7 +137,7 @@ export const AddConfigModal = ({ buttonProps, refetch }: AddLinkProps) => {
             )}
 
             <Modal
-                title="Config"
+                title="资产配置"
                 visible={isModalVisible}
                 destroyOnClose
                 onCancel={handleClose}
@@ -155,7 +155,7 @@ export const AddConfigModal = ({ buttonProps, refetch }: AddLinkProps) => {
                     <Form.Item
                         data-testid="add-config-modal-assetName"
                         name="assetName"
-                        label="Asset Name"
+                        label="资产名"
                         tooltip="Please enter English"
                         rules={[
                             {
@@ -169,7 +169,7 @@ export const AddConfigModal = ({ buttonProps, refetch }: AddLinkProps) => {
                     <Form.Item
                         data-testid="add-config-modal-assetDescription"
                         name="assetDescription"
-                        label="Asset Description"
+                        label="资产描述"
                         rules={[
                             {
                                 required: true,
@@ -182,7 +182,7 @@ export const AddConfigModal = ({ buttonProps, refetch }: AddLinkProps) => {
                     <Form.Item
                         data-testid="add-config-modal-assetPosition"
                         name="assetPosition"
-                        label="Asset Position"
+                        label="资产位置"
                         rules={[
                             {
                                 required: true,
@@ -195,7 +195,7 @@ export const AddConfigModal = ({ buttonProps, refetch }: AddLinkProps) => {
                     <Form.Item
                         data-testid="add-config-modal-assetVersion"
                         name="assetVersion"
-                        label="Asset Version"
+                        label="资产版本"
                         rules={[
                             {
                                 required: true,
@@ -208,7 +208,7 @@ export const AddConfigModal = ({ buttonProps, refetch }: AddLinkProps) => {
                     <Form.Item
                         data-testid="add-config-modal-assetVersionDescription"
                         name="assetVersionDescription"
-                        label="Asset Version Description"
+                        label="资产版本描述"
                         rules={[
                             {
                                 required: true,
@@ -221,7 +221,7 @@ export const AddConfigModal = ({ buttonProps, refetch }: AddLinkProps) => {
                     <Form.Item
                         data-testid="add-config-modal-assetRemark"
                         name="assetRemark"
-                        label="Asset Remark"
+                        label="资产备注"
                         rules={[
                             {
                                 required: true,

@@ -33,7 +33,7 @@ export const SidebarTagsSection = ({ properties, readOnly }: Props) => {
     return (
         <div>
             <span id={ENTITY_PROFILE_TAGS_ID}>
-                <SidebarHeader title="Tags" />
+                <SidebarHeader title="标签" />
                 <TagTermGroup
                     editableTags={
                         properties?.customTagPath
@@ -50,9 +50,9 @@ export const SidebarTagsSection = ({ properties, readOnly }: Props) => {
                     fontSize={12}
                 />
             </span>
-            <StyledDivider />
+            {/* <StyledDivider />
             <span id={ENTITY_PROFILE_GLOSSARY_TERMS_ID}>
-                <SidebarHeader title="Glossary Terms" />
+                <SidebarHeader title="术语表" />
                 <TagTermGroup
                     editableGlossaryTerms={
                         properties?.customTermPath
@@ -68,7 +68,7 @@ export const SidebarTagsSection = ({ properties, readOnly }: Props) => {
                     readOnly={readOnly}
                     fontSize={12}
                 />
-            </span>
+            </span> */}
         </div>
     );
 };

@@ -17,10 +17,10 @@ export default function TagsDropdown({ urns, disabled = false, refetch }: Props)
     return (
         <>
             <ActionDropdown
-                name="Tags"
+                name="标签"
                 actions={[
                     {
-                        title: 'Add tags',
+                        title: '添加标签',
                         onClick: () => {
                             setOperationType(OperationType.ADD);
                             setIsEditModalVisible(true);

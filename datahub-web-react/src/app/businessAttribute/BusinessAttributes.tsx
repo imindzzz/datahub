@@ -163,14 +163,14 @@ export const BusinessAttributes = () => {
             render: tagRenderer,
             onCell: onTagTermCell,
         },
-        {
-            width: '20%',
-            title: 'Glossary Terms',
-            dataIndex: ['properties', 'glossaryTags'],
-            key: 'glossaryTags',
-            render: termRenderer,
-            onCell: onTagTermCell,
-        },
+        // {
+        //     width: '20%',
+        //     title: 'Glossary Terms',
+        //     dataIndex: ['properties', 'glossaryTags'],
+        //     key: 'glossaryTags',
+        //     render: termRenderer,
+        //     onCell: onTagTermCell,
+        // },
         {
             width: '13%',
             title: 'Data Type',

@@ -31,36 +31,36 @@ export const ANTD_GRAY_V2 = {
 
 export const EMPTY_MESSAGES = {
     documentation: {
-        title: '还没有文档',
+        title: '没有文档',
         description: '通过添加文档和有用资源的链接来积累知识。',
     },
     tags: {
-        title: 'No tags added yet',
-        description: 'Tag entities to help make them more discoverable and call out their most important attributes.',
+        title: '没有标签',
+        description: '标记实体以帮助它们更容易被发现，并指出它们最重要的属性。',
     },
     terms: {
-        title: 'No terms added yet',
-        description: 'Apply glossary terms to entities to classify their data.',
+        title: '没有属于',
+        description: '将术语表术语应用于实体以对其数据进行分类。',
     },
     owners: {
-        title: 'No owners added yet',
-        description: 'Adding owners helps you keep track of who is responsible for this data.',
+        title: '没有负责人',
+        description: '添加所有者可以帮助您跟踪谁对这些数据负责。',
     },
     properties: {
-        title: 'No properties',
-        description: 'Properties will appear here if they exist in your data source.',
+        title: '没有属性',
+        description: '如果数据源中存在属性，则属性将出现在这里。',
     },
     queries: {
-        title: 'No queries yet',
-        description: 'Create, view, and share commonly used queries for this dataset.',
+        title: '没有查询',
+        description: '创建、查看和共享此数据集的常用查询。',
     },
     domain: {
-        title: 'No domain set',
-        description: 'Group related entities based on your organizational structure using by adding them to a Domain.',
+        title: '没有域',
+        description: '通过将相关实体添加到域中，根据您的组织结构对它们进行分组。',
     },
     dataProduct: {
-        title: 'No data product set',
-        description: 'Group related entities based on shared characteristics by adding them to a Data Product.',
+        title: '没有数据产品',
+        description: '通过将相关实体添加到数据产品中，根据共享特征对相关实体进行分组。',
     },
     contains: {
         title: 'Contains no Terms',

@@ -68,7 +68,7 @@ export default function DataProductSection({ readOnly }: Props) {
 
     return (
         <>
-            <SidebarHeader title="Data Product" />
+            <SidebarHeader title="数据产品" />
             {dataProduct && (
                 <DataProductLink
                     dataProduct={dataProduct}

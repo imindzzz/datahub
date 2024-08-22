@@ -184,7 +184,7 @@ export default function TagTermGroup({
                     {...buttonProps}
                 >
                     <PlusOutlined />
-                    <span>Add Tags</span>
+                    <span>添加标签</span>
                 </NoElementButton>
             )}
             {canAddTerm && !readOnly && (

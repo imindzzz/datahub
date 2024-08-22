@@ -83,7 +83,7 @@ export const IncidentTab = () => {
             <Header>
                 <TabToolbar>
                     <Button icon={<PlusOutlined />} onClick={() => setIsRaiseIncidentModalVisible(true)} type="text">
-                        Raise Incident
+                        触发事件
                     </Button>
                     <AddIncidentModal
                         refetch={refetch}
