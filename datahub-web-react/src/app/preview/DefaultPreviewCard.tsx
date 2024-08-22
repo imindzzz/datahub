@@ -347,7 +347,7 @@ export default function DefaultPreviewCard({
                         >
                             {description}
                         </NoMarkdownViewer>
-                        {editableProperties?.assetName ? <div>资产名：{editableProperties?.assetName || ''}</div> : undefined}
+                        {editableProperties?.assetName ? <div>资产描述：{editableProperties?.assetDescription || ''}</div> : undefined}
                         {editableProperties?.assetVersion ? <div>资产版本：{editableProperties?.assetVersion || ''}</div> : undefined}
                     </DescriptionContainer>
                 )}
