@@ -106,7 +106,7 @@ function PlatformContentView(props: Props) {
             {typeIcon && <LogoIcon>{typeIcon}</LogoIcon>}
             <PlatformText>{
                 {
-                    'Domain': '域',
+                    'Domain': '业务域',
                     'Database': '数据库',
                     'Schema': '结构',
                     'Table': '表',

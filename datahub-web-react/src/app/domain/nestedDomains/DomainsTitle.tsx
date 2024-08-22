@@ -12,7 +12,7 @@ export default function DomainsTitle() {
             <IconWrapper>
                 <DomainIcon />
             </IconWrapper>
-            域
+            业务域
         </span>
     );
 }

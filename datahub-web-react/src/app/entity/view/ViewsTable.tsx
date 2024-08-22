@@ -15,19 +15,19 @@ type ViewsTableProps = {
 export const ViewsTable = ({ views, onEditView }: ViewsTableProps) => {
     const tableColumns = [
         {
-            title: 'Name',
+            title: '名称',
             dataIndex: 'name',
             key: 'name',
             render: (name, record) => <NameColumn name={name} record={record} onEditView={onEditView} />,
         },
         {
-            title: 'Description',
+            title: '描述',
             dataIndex: 'description',
             key: 'description',
             render: (description) => <DescriptionColumn description={description} />,
         },
         {
-            title: 'Type',
+            title: '类型',
             dataIndex: 'viewType',
             key: 'viewType',
             render: (viewType) => <ViewTypeColumn viewType={viewType} />,
@@ -53,7 +53,7 @@ export const ViewsTable = ({ views, onEditView }: ViewsTableProps) => {
             dataSource={tableData}
             rowKey="urn"
             locale={{
-                emptyText: <Empty description="No Views found!" image={Empty.PRESENTED_IMAGE_SIMPLE} />,
+                emptyText: <Empty description="暂无视图!" image={Empty.PRESENTED_IMAGE_SIMPLE} />,
             }}
             pagination={false}
         />

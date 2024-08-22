@@ -124,7 +124,7 @@ export const LineageSelector = ({ urn, type }: Props): JSX.Element => {
                     }}
                 >
                     <DetailIcon />
-                    Details
+                    详情
                 </IconGroup>
                 <IconGroup
                     disabled={!canNavigateToLineage}
@@ -142,14 +142,14 @@ export const LineageSelector = ({ urn, type }: Props): JSX.Element => {
                     }}
                 >
                     <LineageIcon />
-                    Lineage
+                    关系图
                 </IconGroup>
             </LineageIconGroup>
             <LineageSummary>
                 <LineageBadge
-                    count={`${lineageLoading ? '-' : upstreamText} upstream, ${
+                    count={`${lineageLoading ? '-' : upstreamText} 领先, ${
                         lineageLoading ? '-' : downstreamText
-                    } downstream`}
+                    } 落后`}
                 />
             </LineageSummary>
         </LineageNavContainer>

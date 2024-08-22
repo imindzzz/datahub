@@ -114,7 +114,7 @@ export function HeaderLinks(props: Props) {
                                             fontWeight: 'bold',
                                         }}
                                     />
-                                    <NavTitleText>域</NavTitleText>
+                                    <NavTitleText>业务域</NavTitleText>
                                 </NavTitleContainer>
                                 <NavTitleDescription>管理相关的数据资产组</NavTitleDescription>
                             </Link>

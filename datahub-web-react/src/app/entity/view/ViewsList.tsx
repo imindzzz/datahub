@@ -104,11 +104,11 @@ export const ViewsList = () => {
             {error && message.error({ content: `Failed to load Views! An unexpected error occurred.`, duration: 3 })}
             <TabToolbar>
                 <Button type="text" onClick={onClickCreateView}>
-                    <PlusOutlined /> Create new View
+                    <PlusOutlined /> 创建新视图
                 </Button>
                 <SearchBar
                     initialQuery=""
-                    placeholderText="Search Views..."
+                    placeholderText="搜索视图"
                     suggestions={[]}
                     style={searchBarStyle}
                     inputStyle={searchBarInputStyle}

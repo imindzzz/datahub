@@ -171,7 +171,7 @@ export const HomePageRecommendations = ({ user }: Props) => {
                             <DomainsRecomendationContainer id={HOME_PAGE_DOMAINS_ID}>
                                 <RecommendationTitle level={4}>{
                                     {
-                                        Domains: "域"
+                                        Domains: "业务域"
                                     }[domainRecommendationModule.title] || domainRecommendationModule.title
                                 }</RecommendationTitle>
                                 <ThinDivider />

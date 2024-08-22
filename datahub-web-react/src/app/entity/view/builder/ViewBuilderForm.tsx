@@ -55,8 +55,8 @@ export const ViewBuilderForm = ({ urn, mode, state, updateState }: Props) => {
     return (
         <span data-testid="view-builder-form">
             <Form form={form} initialValues={state} layout="vertical">
-                <StyledFormItem label={<Typography.Text strong>Name</Typography.Text>}>
-                    <Typography.Paragraph>Give your new View a name. </Typography.Paragraph>
+                <StyledFormItem label={<Typography.Text strong>名称</Typography.Text>}>
+                    <Typography.Paragraph>视图名称 </Typography.Paragraph>
                     <Form.Item
                         name="name"
                         rules={[
@@ -71,25 +71,25 @@ export const ViewBuilderForm = ({ urn, mode, state, updateState }: Props) => {
                     >
                         <Input
                             data-testid="view-name-input"
-                            placeholder="Data Analyst"
+                            placeholder="数据分析"
                             onChange={(event) => setName(event.target.value)}
                             disabled={mode === ViewBuilderMode.PREVIEW}
                         />
                     </Form.Item>
                 </StyledFormItem>
-                <StyledFormItem label={<Typography.Text strong>Description</Typography.Text>}>
-                    <Typography.Paragraph>Write a description for your View.</Typography.Paragraph>
+                <StyledFormItem label={<Typography.Text strong>描述</Typography.Text>}>
+                    <Typography.Paragraph>视图描述</Typography.Paragraph>
                     <Form.Item name="description" rules={[{ whitespace: true }, { min: 1, max: 500 }]} hasFeedback>
                         <Input.TextArea
                             data-testid="view-description-input"
-                            placeholder="This View is useful for Data Analysts"
+                            placeholder="这个视图用于数据分析"
                             onChange={(event) => setDescription(event.target.value)}
                             disabled={mode === ViewBuilderMode.PREVIEW}
                         />
                     </Form.Item>
                 </StyledFormItem>
-                <StyledFormItem label={<Typography.Text strong>Type</Typography.Text>}>
-                    <Typography.Paragraph>Select the type of your new View.</Typography.Paragraph>
+                <StyledFormItem label={<Typography.Text strong>类型</Typography.Text>}>
+                    <Typography.Paragraph>视图类型</Typography.Paragraph>
                     <Form.Item name="viewType">
                         <Select
                             onSelect={(value) => setViewType(value as DataHubViewType)}
@@ -104,10 +104,9 @@ export const ViewBuilderForm = ({ urn, mode, state, updateState }: Props) => {
                         </Select>
                     </Form.Item>
                 </StyledFormItem>
-                <StyledFormItem label={<Typography.Text strong>Filters</Typography.Text>} style={{ marginBottom: 8 }}>
+                <StyledFormItem label={<Typography.Text strong>过滤器</Typography.Text>} style={{ marginBottom: 8 }}>
                     <Typography.Paragraph>
-                        Select the filters that are applied when this View is selected. Assets that match these filters
-                        will be shown when the View is applied.
+                        选择应用于视图的过滤器
                     </Typography.Paragraph>
                 </StyledFormItem>
             </Form>
