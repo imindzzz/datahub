@@ -236,7 +236,7 @@ export const SetDomainModal = ({ urns, onCloseModal, refetch, defaultValue, onOk
                             dropdownStyle={isShowingDomainNavigator ? { display: 'none' } : {}}
                             notFoundContent={
                                 <Empty
-                                    description="No Domains Found"
+                                    description="未找到业务域"
                                     image={Empty.PRESENTED_IMAGE_SIMPLE}
                                     style={{ color: ANTD_GRAY[7] }}
                                 />

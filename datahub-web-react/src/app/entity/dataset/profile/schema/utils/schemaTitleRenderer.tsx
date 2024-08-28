@@ -62,9 +62,9 @@ export default function useSchemaTitleRenderer(
                         <Highlight search={filterText}>{pathToDisplay}</Highlight>
                     </FieldPathText>
                     <TypeLabel type={record.type} nativeDataType={record.nativeDataType} />
-                    {(schemaMetadata?.primaryKeys?.includes(fieldPath) || record.isPartOfKey) && <PrimaryKeyLabel />}
-                    {record.isPartitioningKey && <PartitioningKeyLabel />}
-                    {record.nullable && <NullableLabel />}
+                    {/* {(schemaMetadata?.primaryKeys?.includes(fieldPath) || record.isPartOfKey) && <PrimaryKeyLabel />} */}
+                    {/* {record.isPartitioningKey && <PartitioningKeyLabel />}
+                    {record.nullable && <NullableLabel />} */}
                     {schemaMetadata?.foreignKeys
                         ?.filter(
                             (constraint) =>

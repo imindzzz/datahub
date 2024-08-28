@@ -48,7 +48,7 @@ export default function ManageDomainsPageV2() {
                     onClick={() => setIsCreatingDomain(true)}
                     data-testid="domains-new-domain-button"
                 >
-                    <PlusOutlined /> New Domain
+                    <PlusOutlined /> 创建业务域
                 </Button>
             </Header>
             <RootDomains setIsCreatingDomain={setIsCreatingDomain} />

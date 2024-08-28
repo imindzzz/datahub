@@ -47,9 +47,9 @@ export default function FieldHeader({ expandedField }: Props) {
                 <FieldName>{displayName}</FieldName>
                 <TypesSection>
                     <TypeLabel type={expandedField.type} nativeDataType={expandedField.nativeDataType} />
-                    {expandedField.isPartOfKey && <PrimaryKeyLabel />}
+                    {/* {expandedField.isPartOfKey && <PrimaryKeyLabel />}
                     {expandedField.isPartitioningKey && <PartitioningKeyLabel />}
-                    {expandedField.nullable && <NullableLabel />}
+                    {expandedField.nullable && <NullableLabel />} */}
                 </TypesSection>
             </NameTypesWrapper>
             <MenuWrapper>

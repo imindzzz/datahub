@@ -138,7 +138,7 @@ export const DomainsList = () => {
             <DomainsContainer>
                 <TabToolbar>
                     <Button id={DOMAINS_CREATE_DOMAIN_ID} type="text" onClick={() => setIsCreatingDomain(true)}>
-                        <PlusOutlined /> New Domain
+                        <PlusOutlined /> 创建业务域
                     </Button>
                     <SearchBar
                         initialQuery={query || ''}
