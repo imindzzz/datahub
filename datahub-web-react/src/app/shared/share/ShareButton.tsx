@@ -22,6 +22,7 @@ const StyledShareIcon = styled(ShareAltOutlined)`
 `;
 
 export default function ShareButton({ urn, entityType, subType, name }: ShareButtonProps) {
+    return null;
     return (
         <Dropdown
             trigger={['click']}

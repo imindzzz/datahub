@@ -59,7 +59,7 @@ function EmptyDomainsSection(props: Props) {
                 }
             >
                 <StyledButton onClick={() => setIsCreatingDomain(true)}>
-                    <PlusOutlined /> Create Domain
+                    <PlusOutlined /> 创建业务域
                 </StyledButton>
             </StyledEmpty>
         </EmptyDomainContainer>

@@ -58,7 +58,9 @@ export default function ProfileNavBrowsePathV2({ urn, type }: Props) {
     }
 
     return (
-        <BrowseRow>
+        <BrowseRow style={{
+            pointerEvents: 'none',
+        }}>
             <StyledBreadcrumb separator=">">
                 <BreadcrumbItem
                     disabled={!isBrowsable}

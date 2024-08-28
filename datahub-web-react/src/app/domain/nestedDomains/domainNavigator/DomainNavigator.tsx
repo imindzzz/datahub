@@ -27,7 +27,7 @@ export default function DomainNavigator({ domainUrnToHide, selectDomainOverride 
             {error && <Alert message="Loading Domains failed." showIcon type="error" />}
             {noDomainsFound && (
                 <Empty
-                    description="No Domains Found"
+                    description="未找到业务域"
                     image={Empty.PRESENTED_IMAGE_SIMPLE}
                     style={{ color: ANTD_GRAY[7] }}
                 />
