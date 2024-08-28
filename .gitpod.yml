@@ -7,4 +7,10 @@
 # tasks:
 #   - init: ./gradlew build
 
+# sdk install java 17.0.12-tem
+# nvm install 21
 
+# ./gradlew quickstartDebug
+# ./gradlew :metadata-service:war:build
+# ./gradlew :datahub-frontend:build
+# ./gradlew :docker:debugReload
