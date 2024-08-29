@@ -124,8 +124,8 @@ services:
     depends_on:
       elasticsearch-setup:
         condition: service_completed_successfully
-      kafka-setup:
-        condition: service_completed_successfully
+      # kafka-setup:
+      #   condition: service_completed_successfully
       mysql-setup:
         condition: service_completed_successfully
       neo4j:
@@ -189,21 +189,21 @@ services:
     image: ${DATAHUB_ELASTIC_SETUP_IMAGE:-acryldata/datahub-elasticsearch-setup}:${DATAHUB_VERSION:-head}
     labels:
       datahub_setup_job: true
-  kafka-setup:
-    depends_on:
-      broker:
-        condition: service_healthy
-      schema-registry:
-        condition: service_healthy
-    environment:
-    - DATAHUB_PRECREATE_TOPICS=${DATAHUB_PRECREATE_TOPICS:-false}
-    - KAFKA_BOOTSTRAP_SERVER=broker:29092
-    - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
-    - USE_CONFLUENT_SCHEMA_REGISTRY=TRUE
-    hostname: kafka-setup
-    image: ${DATAHUB_KAFKA_SETUP_IMAGE:-acryldata/datahub-kafka-setup}:${DATAHUB_VERSION:-head}
-    labels:
-      datahub_setup_job: true
+  # kafka-setup:
+  #   depends_on:
+  #     broker:
+  #       condition: service_healthy
+  #     schema-registry:
+  #       condition: service_healthy
+  #   environment:
+  #   - DATAHUB_PRECREATE_TOPICS=${DATAHUB_PRECREATE_TOPICS:-false}
+  #   - KAFKA_BOOTSTRAP_SERVER=broker:29092
+  #   - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
+  #   - USE_CONFLUENT_SCHEMA_REGISTRY=TRUE
+  #   hostname: kafka-setup
+  #   image: ${DATAHUB_KAFKA_SETUP_IMAGE:-acryldata/datahub-kafka-setup}:${DATAHUB_VERSION:-head}
+  #   labels:
+  #     datahub_setup_job: true
   mysql:
     command: --character-set-server=utf8mb4 --collation-server=utf8mb4_bin --default-authentication-plugin=mysql_native_password
     environment:
