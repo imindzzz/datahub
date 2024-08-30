@@ -13,6 +13,25 @@ import { useHistory } from 'react-router';
 export default function () {
   const history = useHistory();
   const inputRef = useRef<HTMLInputElement>(null);
+
+  const handleSearch = () => {
+    const query = inputRef?.current?.value || '';
+    // /search?page=1&query=%25E4%25BD%25A0%25E5%25A5%25BD&unionType=0
+    const search = QueryString.stringify(
+      {
+        // ...filtersToQueryStringParams(constructedFilters),
+        query: encodeURIComponent(query),
+        page: 1,
+        unionType: 0,
+        // sortOption: selectedSortOption,
+      },
+      // { arrayFormat: 'comma' },
+    );
+    history.push({
+      pathname: `${PageRoutes.SEARCH}`,
+      search,
+    });
+  }
   return (
     <Main>
       <Banner
@@ -26,25 +45,14 @@ export default function () {
           <div className="gap"></div>
           <div className="subTitle">Wilmar Data Catalog</div>
           <div className="search">
-            <input ref={inputRef} className="input" placeholder="请输入表/字段/业务对象…" />
-            <div className="button" onClick={() => {
-              const query = inputRef?.current?.value || '';
-              // /search?page=1&query=%25E4%25BD%25A0%25E5%25A5%25BD&unionType=0
-              const search = QueryString.stringify(
-                {
-                  // ...filtersToQueryStringParams(constructedFilters),
-                  query: encodeURIComponent(query),
-                  page: 1,
-                  unionType: 0,
-                  // sortOption: selectedSortOption,
-                },
-                // { arrayFormat: 'comma' },
-              );
-              history.push({
-                pathname: `${PageRoutes.SEARCH}`,
-                search,
-              });
-            }}>搜索</div>
+            <input ref={inputRef} className="input" placeholder="请输入表/字段/业务对象…" onKeyPress={(e) => {
+
+              if (e.code.toLocaleLowerCase() === 'enter') {
+                handleSearch();
+              }
+
+            }} />
+            <div className="button" onClick={handleSearch}>搜索</div>
           </div>
         </div>
       </Banner>
