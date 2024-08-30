@@ -94,7 +94,7 @@ export const Top = styled.div`
       justify-content: center;
       width: 100%;
       height: 100%;
-      padding: 20px 40px;
+      padding: 10px 20px;
       background: linear-gradient(to bottom right, #1e854500, #1e854510);
       > .img {
         width: 80px;
@@ -102,6 +102,8 @@ export const Top = styled.div`
       > .right {
         flex: 1;
         padding-left: 20px;
+        position: relative;
+        top: -10px;
         > .title {
           font-weight: bold;
           font-size: 30px;
@@ -116,24 +118,30 @@ export const Top = styled.div`
           }
         }
         > .subItems {
-          padding-top: 10px;
-
+          padding-top: 0px;
+          padding-right: 80px;
           > .item {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: flex-start;
             padding-top: 5px;
 
             color: #000;
             font-size: 14px;
-
+            overflow: hidden;
             > .dot {
               display: inline-block;
               width: 8px;
               height: 8px;
-              margin-right: 5px;
+              margin-right: 10px;
               background-color: #1e8545;
               border-radius: 50%;
+
+              position: relative;
+              top: 8px;
+            }
+            >.text{
+              flex:1
             }
             &.disabled {
               color: #ccc;
@@ -142,6 +150,7 @@ export const Top = styled.div`
               }
             }
           }
+          
         }
       }
     }
@@ -183,7 +192,7 @@ export const Bottom = styled.div`
 
   > .item {
     width: 32%;
-    height: 200px;
+    height: 250px;
     margin-top: 20px;
 
     background: #fff;
@@ -195,7 +204,7 @@ export const Bottom = styled.div`
       justify-content: center;
       width: 100%;
       height: 100%;
-      padding: 20px 10px;
+      padding: 10px 10px;
       background: linear-gradient(to bottom right, #1e854500, #1e854510);
 
       > .right {
@@ -210,27 +219,40 @@ export const Bottom = styled.div`
           -webkit-text-fill-color: transparent;
         }
         > .subItems {
-          padding-top: 10px;
-          > .item {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            padding-top: 5px;
-            padding-right: 70px;
-            color: #000;
-            font-size: 14px;
-            > .dot {
-              display: inline-block;
-              width: 8px;
-              height: 8px;
-              margin-right: 5px;
-              background-color: #1e8545;
-              border-radius: 50%;
+          padding-top: 0px;
+          display: flex;
+          >.col{
+            flex: 1;
+            &:nth-child(2){
+              padding-left: 10px;
             }
-            &.disabled {
-              color: #ccc;
+            > .item {
+              display: flex;
+              align-items: flex-start;
+              justify-content: flex-start;
+              padding-top: 5px;
+              color: #000;
+              font-size: 14px;
+              overflow: hidden;
               > .dot {
-                background-color: #ccc;
+                display: inline-block;
+                width: 8px;
+                height: 8px;
+                margin-right: 5px;
+                background-color: #1e8545;
+                border-radius: 50%;
+
+                position: relative;
+                top: 8px;
+              }
+              >.text{
+                flex:1;
+              }
+              &.disabled {
+                color: #ccc;
+                > .dot {
+                  background-color: #ccc;
+                }
               }
             }
           }
