@@ -15,6 +15,7 @@ export const Banner = styled.div`
     top: 20px;
     left: 20px;
     width: 140px;
+    cursor: pointer;
   }
   > .container {
     position: relative;
