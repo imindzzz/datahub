@@ -32,6 +32,11 @@ export default function () {
       search,
     });
   }
+  const handleGoHome = ()=>{
+    history.push({
+      pathname: `/home`,
+    });
+  }
   return (
     <Main>
       <Banner
@@ -39,7 +44,6 @@ export default function () {
           backgroundImage: `url(${imageBg})`,
         }}
       >
-        <img src={imageLogo} className="logo" alt="logo" />
         <div className="container">
           <div className="title">集团数据目录</div>
           <div className="gap"></div>
@@ -55,6 +59,7 @@ export default function () {
             <div className="button" onClick={handleSearch}>搜索</div>
           </div>
         </div>
+        <img src={imageLogo} className="logo" alt="logo" onClick={handleGoHome} />
       </Banner>
       <Top>
         {[
