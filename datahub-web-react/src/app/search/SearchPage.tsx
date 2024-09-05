@@ -52,7 +52,8 @@ export const SearchPage = () => {
         variables: {
             input: {
                 types: [],
-                query,
+                // 折中处理一下搜索不到 description
+                query: query ? `/q name: *${query}* OR description: *${query}*` : query,
                 start: (page - 1) * numResultsPerPage,
                 count: numResultsPerPage,
                 filters: [],
