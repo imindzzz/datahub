@@ -37,7 +37,7 @@ export const SidebarAboutSection = ({ properties, readOnly }: Props) => {
                     hasContent &&
                     !readOnly && (
                         <Button
-                            onClick={() => routeToTab({ tabName: 'Documentation', tabParams: { editing: true } })}
+                            onClick={() => routeToTab({ tabName: '文档', tabParams: { editing: true } })}
                             type="text"
                             shape="circle"
                         >

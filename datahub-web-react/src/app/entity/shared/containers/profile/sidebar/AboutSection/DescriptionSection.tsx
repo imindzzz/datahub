@@ -35,7 +35,7 @@ export default function DescriptionSection({ description, isExpandable, limit }:
         if (isCompact || isExpandable) {
             setIsExpanded(true);
         } else {
-            routeToTab({ tabName: 'Documentation' });
+            routeToTab({ tabName: '文档' });
         }
     }
 

@@ -60,13 +60,13 @@ export const DescriptionPreviewModal = ({ description, editMode, onClose }: Desc
             >
                 {(editMode && (
                     <DescriptionEditor
-                        onComplete={() => routeToTab({ tabName: 'Documentation', tabParams: { modal: true } })}
+                        onComplete={() => routeToTab({ tabName: '文档', tabParams: { modal: true } })}
                     />
                 )) || (
                     <DescriptionPreview
                         description={description}
                         onEdit={() =>
-                            routeToTab({ tabName: 'Documentation', tabParams: { editing: true, modal: true } })
+                            routeToTab({ tabName: '文档', tabParams: { editing: true, modal: true } })
                         }
                     />
                 )}
