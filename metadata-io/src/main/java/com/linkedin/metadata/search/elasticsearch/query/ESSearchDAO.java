@@ -96,6 +96,7 @@ public class ESSearchDAO {
     }
   }
 
+  // xx  
   @Nonnull
   @WithSpan
   private SearchResult executeAndExtract(
@@ -230,6 +231,7 @@ public class ESSearchDAO {
       int from,
       int size,
       @Nullable List<String> facets) {
+        // xx
     final String finalInput = input.isEmpty() ? "*" : input;
     Timer.Context searchRequestTimer = MetricUtils.timer(this.getClass(), "searchRequest").time();
     List<EntitySpec> entitySpecs =

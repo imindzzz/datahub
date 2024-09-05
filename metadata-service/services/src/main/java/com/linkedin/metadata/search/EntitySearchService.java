@@ -14,6 +14,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import org.opensearch.action.explain.ExplainResponse;
 
+// xx 
 public interface EntitySearchService {
 
   /**

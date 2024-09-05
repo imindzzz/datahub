@@ -25,6 +25,7 @@ import org.javatuples.Sextet;
 import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
 
+// xx
 @RequiredArgsConstructor
 public class CachingEntitySearchService {
   private static final String ENTITY_SEARCH_SERVICE_SEARCH_CACHE_NAME = "entitySearchServiceSearch";
@@ -51,7 +52,7 @@ public class CachingEntitySearchService {
    * @param from the start offset
    * @param size the count
    * @param facets list of facets we want aggregations for
-   * @return a {@link SearchResult} containing the requested batch of search results
+   * @return a {@link SearchResult} containng the requested batch of search results
    */
   public SearchResult search(
       @Nonnull OperationContext opContext,

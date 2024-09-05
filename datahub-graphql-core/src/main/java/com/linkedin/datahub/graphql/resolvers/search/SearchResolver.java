@@ -83,6 +83,7 @@ public class SearchResolver implements DataFetcher<CompletableFuture<SearchResul
                 _entityClient.search(
                     context.getOperationContext().withSearchFlags(flags -> searchFlags),
                     entityName,
+                    // xx
                     sanitizedQuery,
                     ResolverUtils.buildFilter(input.getFilters(), input.getOrFilters()),
                     null,

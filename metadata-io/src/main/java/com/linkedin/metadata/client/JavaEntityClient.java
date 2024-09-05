@@ -335,6 +335,7 @@ public class JavaEntityClient implements EntityClient {
       int count)
       throws RemoteInvocationException {
 
+        // xx
     return ValidationUtils.validateSearchResult(
         entitySearchService.search(
             opContext, List.of(entity), input, newFilter(requestFilters), null, start, count),
@@ -394,6 +395,7 @@ public class JavaEntityClient implements EntityClient {
       int start,
       int count)
       throws RemoteInvocationException {
+        // xx
     return ValidationUtils.validateSearchResult(
         entitySearchService.search(
             opContext, List.of(entity), input, filter, sortCriterion, start, count),

@@ -169,6 +169,7 @@ public class ElasticSearchService implements EntitySearchService, ElasticSearchI
             "Searching FullText Search documents entityName: %s, input: %s, postFilters: %s, sortCriterion: %s, from: %s, size: %s",
             entityNames, input, postFilters, sortCriterion, from, size));
 
+      // xx
     return esSearchDAO.search(
         opContext.withSearchFlags(
             flags -> applyDefaultSearchFlags(flags, input, DEFAULT_SERVICE_SEARCH_FLAGS)),
