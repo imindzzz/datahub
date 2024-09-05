@@ -24,7 +24,7 @@ export default function GlossarySidebarAboutSection() {
                     <StripMarkdownText
                         limit={205}
                         readMore={
-                            <Typography.Link onClick={() => routeToTab({ tabName: 'Documentation' })}>
+                            <Typography.Link onClick={() => routeToTab({ tabName: '文档' })}>
                                 Read More
                             </Typography.Link>
                         }

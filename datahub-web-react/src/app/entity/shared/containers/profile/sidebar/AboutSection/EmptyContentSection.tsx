@@ -35,7 +35,7 @@ export default function EmptyContentSection({ hideLinksButton, readOnly }: Props
                     {EMPTY_MESSAGES.documentation.title}. {EMPTY_MESSAGES.documentation.description}
                 </EmptyContentMessage>
                 {!readOnly && (
-                    <Button onClick={() => routeToTab({ tabName: 'Documentation', tabParams: { editing: true } })}>
+                    <Button onClick={() => routeToTab({ tabName: '文档', tabParams: { editing: true } })}>
                         <EditOutlined /> 添加文档
                     </Button>
                 )}
