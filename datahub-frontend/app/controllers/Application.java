@@ -92,7 +92,7 @@ public class Application extends Controller {
 
   /**
    * <p>用于 Excel Preview </p>
-   * <p>docker volumes 映射 /home/tempuser/files:/home/datahub/excels</p>
+   * <p>docker volumes 映射 /home/files:/home/datahub/excels</p>
    * 
    * <p>参考官方 ExternalAssets 源码</p>
    * 

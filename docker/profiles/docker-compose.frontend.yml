@@ -13,7 +13,7 @@ x-datahub-frontend-service: &datahub-frontend-service
     DATAHUB_GMS_HOST: ${DATAHUB_GMS_HOST:-datahub-gms}
   volumes:
     - ${HOME}/.datahub/plugins:/etc/datahub/plugins
-    - /home/tempuser/files:/home/datahub/excels
+    - /home/files:/home/datahub/excels
 
 x-datahub-frontend-service-dev: &datahub-frontend-service-dev
   <<: *datahub-frontend-service
@@ -27,7 +27,7 @@ x-datahub-frontend-service-dev: &datahub-frontend-service-dev
     DATAHUB_ANALYTICS_ENABLED: ${DATAHUB_ANALYTICS_ENABLED:-true}
   volumes:
     - ../../datahub-frontend/build/stage/main:/datahub-frontend
-    - /home/tempuser/files:/home/datahub/excels
+    - /home/files:/home/datahub/excels
 
 services:
   frontend-quickstart:

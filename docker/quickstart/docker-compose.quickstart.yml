@@ -69,7 +69,7 @@ services:
     - ${DATAHUB_MAPPED_FRONTEND_PORT:-9002}:9002
     volumes:
     - ${HOME}/.datahub/plugins:/etc/datahub/plugins
-    - /home/tempuser/files:/home/datahub/excels
+    - /home/files:/home/datahub/excels
   datahub-gms:
     depends_on:
       datahub-upgrade:

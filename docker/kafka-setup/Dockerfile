@@ -1,7 +1,7 @@
 ARG KAFKA_DOCKER_VERSION=7.4.4
 
 # Defining custom repo urls for use in enterprise environments. Re-used between stages below.
-ARG ALPINE_REPO_URL=http://dl-cdn.alpinelinux.org/alpine
+ARG ALPINE_REPO_URL=https://mirrors.aliyun.com/alpine
 ARG GITHUB_REPO_URL=https://github.com
 ARG MAVEN_CENTRAL_REPO_URL=https://repo1.maven.org/maven2
 ARG APACHE_DOWNLOAD_URL=null
@@ -28,7 +28,7 @@ ENV SCALA_VERSION=2.13
 LABEL name="kafka" version=${KAFKA_VERSION}
 
 # Optionally set corporate mirror for apk
-RUN if [ "${ALPINE_REPO_URL}" != "http://dl-cdn.alpinelinux.org/alpine" ] ; then sed -i "s#http.*://dl-cdn.alpinelinux.org/alpine#${ALPINE_REPO_URL}#g" /etc/apk/repositories ; fi
+RUN if [ "${ALPINE_REPO_URL}" != "https://mirrors.aliyun.com/alpine" ] ; then sed -i "s#http.*://dl-cdn.alpinelinux.org/alpine#${ALPINE_REPO_URL}#g" /etc/apk/repositories ; fi
 
 RUN apk add --no-cache bash coreutils
 RUN apk --no-cache add openjdk17-jre-headless --repository=${ALPINE_REPO_URL}/edge/community

@@ -26,7 +26,7 @@ services:
     volumes:
     - ../datahub-frontend/build/stage/main:/datahub-frontend
     - ./monitoring/client-prometheus-config.yaml:/datahub-frontend/client-prometheus-config.yaml
-    - /home/tempuser/files:/home/datahub/excels
+    - /home/files:/home/datahub/excels
   datahub-gms:
     image: acryldata/datahub-gms:debug
     ports:

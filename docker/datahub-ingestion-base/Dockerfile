@@ -2,7 +2,7 @@ ARG APP_ENV=full
 ARG BASE_IMAGE=base
 
 # Defining custom repo urls for use in enterprise environments. Re-used between stages below.
-ARG ALPINE_REPO_URL=http://dl-cdn.alpinelinux.org/alpine
+ARG ALPINE_REPO_URL=https://mirrors.aliyun.com/alpine
 ARG GITHUB_REPO_URL=https://github.com
 ARG DEBIAN_REPO_URL=https://deb.debian.org/debian
 ARG PIP_MIRROR_URL=https://pypi.python.org/simple

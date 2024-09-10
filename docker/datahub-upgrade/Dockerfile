@@ -2,7 +2,7 @@
 ARG APP_ENV=prod
 
 # Defining custom repo urls for use in enterprise environments. Re-used between stages below.
-ARG ALPINE_REPO_URL=http://dl-cdn.alpinelinux.org/alpine
+ARG ALPINE_REPO_URL=https://mirrors.aliyun.com/alpine
 ARG GITHUB_REPO_URL=https://github.com
 ARG MAVEN_CENTRAL_REPO_URL=https://repo1.maven.org/maven2
 
@@ -15,7 +15,7 @@ ENV DOCKERIZE_VERSION=v0.6.1
 WORKDIR /go/src/github.com/jwilder
 
 # Optionally set corporate mirror for apk
-RUN if [ "${ALPINE_REPO_URL}" != "http://dl-cdn.alpinelinux.org/alpine" ] ; then sed -i "s#http.*://dl-cdn.alpinelinux.org/alpine#${ALPINE_REPO_URL}#g" /etc/apk/repositories ; fi
+RUN if [ "${ALPINE_REPO_URL}" != "https://mirrors.aliyun.com/alpine" ] ; then sed -i "s#http.*://dl-cdn.alpinelinux.org/alpine#${ALPINE_REPO_URL}#g" /etc/apk/repositories ; fi
 
 RUN apk --no-cache --update add openssl git tar curl
 
@@ -33,7 +33,7 @@ ARG GITHUB_REPO_URL
 ARG MAVEN_CENTRAL_REPO_URL
 
 # Optionally set corporate mirror for apk
-RUN if [ "${ALPINE_REPO_URL}" != "http://dl-cdn.alpinelinux.org/alpine" ] ; then sed -i "s#http.*://dl-cdn.alpinelinux.org/alpine#${ALPINE_REPO_URL}#g" /etc/apk/repositories ; fi
+RUN if [ "${ALPINE_REPO_URL}" != "https://mirrors.aliyun.com/alpine" ] ; then sed -i "s#http.*://dl-cdn.alpinelinux.org/alpine#${ALPINE_REPO_URL}#g" /etc/apk/repositories ; fi
 
 ENV JMX_VERSION=0.18.0
 ENV JETTY_VERSION=11.0.21
