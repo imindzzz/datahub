@@ -65,14 +65,26 @@ services:
     labels:
       datahub_setup_job: true
     depends_on:
-#      mysql-setup:
-#        condition: service_completed_successfully
+      mysql-setup:
+        condition: service_completed_successfully
       elasticsearch-setup:
         condition: service_completed_successfully
       kafka-setup:
         condition: service_completed_successfully
 #      neo4j:
 #        condition: service_healthy
+  mysql-setup:
+    hostname: mysql-setup
+    image: ${DATAHUB_MYSQL_SETUP_IMAGE:-harbor-devops.wilmar.cn/dp/acryldata/datahub-mysql-setup}:${DATAHUB_VERSION:-head}
+    build:
+      context: ../
+      dockerfile: docker/mysql-setup/Dockerfile
+    env_file: mysql-setup/env/docker.env
+    depends_on:
+      mysql:
+        condition: service_healthy
+    labels:
+      datahub_setup_job: true
   # This "container" is a workaround to pre-create search indices
   elasticsearch-setup:
     hostname: elasticsearch-setup
@@ -127,6 +139,21 @@ services:
       timeout: 5s
     volumes:
     - esdata:/usr/share/elasticsearch/data
+#  neo4j:
+#    hostname: neo4j
+#    image: neo4j:4.4.9-community
+#    ports:
+#    - ${DATAHUB_MAPPED_NEO4J_HTTP_PORT:-7474}:7474
+#    - ${DATAHUB_MAPPED_NEO4J_BOLT_PORT:-7687}:7687
+#    env_file: neo4j/env/docker.env
+#    healthcheck:
+#      test: wget http://neo4j:$${DATAHUB_NEO4J_HTTP_PORT:-7474}
+#      start_period: 5s
+#      interval: 1s
+#      retries: 5
+#      timeout: 5s
+#    volumes:
+#    - neo4jdata:/data
   schema-registry:
     hostname: schema-registry
     image: ${DATAHUB_CONFLUENT_SCHEMA_REGISTRY_IMAGE:-harbor-devops.wilmar.cn/dp/confluentinc/cp-schema-registry}:${DATAHUB_CONFLUENT_VERSION:-7.4.0}
@@ -176,6 +203,22 @@ services:
     # See also: https://docs.confluent.io/platform/current/installation/docker/operations/external-volumes.html#data-volumes-for-kafka-and-zk
     - zkdata:/var/lib/zookeeper/data
     - zklogs:/var/lib/zookeeper/log
+  mysql:
+    hostname: mysql
+    image: harbor-devops.wilmar.cn/dp/mysql:${DATAHUB_MYSQL_VERSION:-8.2}
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_bin --default-authentication-plugin=mysql_native_password
+    ports:
+      - ${DATAHUB_MAPPED_MYSQL_PORT:-3306}:3306
+    env_file: mysql/env/docker.env
+    restart: on-failure
+    healthcheck:
+      test: mysqladmin ping -h mysql -u $$MYSQL_USER --password=$$MYSQL_PASSWORD
+      start_period: 10s
+      interval: 1s
+      retries: 3
+      timeout: 5s
+    volumes:
+      - mysqldata:/var/lib/mysql
 networks:
   default:
     name: datahub_network
@@ -185,3 +228,4 @@ volumes:
   broker:
   zkdata:
   zklogs:
+  mysqldata:
